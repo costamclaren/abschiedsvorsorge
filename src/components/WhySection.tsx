@@ -32,21 +32,37 @@ const WhySection = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Vorsorge aus Liebe
-          </h2>
-          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Niemand denkt gerne an den Abschied. Aber wer vorsorgt, schenkt
-            seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
-          </p>
-        </motion.div>
+        {/* Intro with image */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+              Vorsorge aus Liebe
+            </h2>
+            <p className="text-muted-foreground font-body text-lg leading-relaxed">
+              Niemand denkt gerne an den Abschied. Aber wer vorsorgt, schenkt
+              seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-lg overflow-hidden shadow-elevated"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516733968668-dbdce39c0651?w=800&q=80"
+              alt="Älteres Ehepaar geht zusammen spazieren"
+              className="w-full h-64 md:h-80 object-cover"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => (
