@@ -24,13 +24,13 @@ const HeroSection = () => {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
-            Bestattungsvorsorge
-            <span className="block text-accent mt-2">Costa & McLaren</span>
+            Weil Liebe auch
+            <span className="block text-accent mt-2">über das Leben hinausgeht</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/85 font-body max-w-2xl mx-auto mb-10 leading-relaxed">
-            Entlasten Sie Ihre Liebsten – mit einer Sterbegeldversicherung, die
-            im Trauerfall finanzielle Sicherheit gibt. Wir beraten Sie
-            unabhängig mit den besten Tarifen von Hannoversche und DELA.
+            Schenken Sie Ihrer Familie das Wertvollste: die Gewissheit, dass
+            alles geregelt ist. Damit in der schwersten Zeit nur Trauer Platz
+            hat – nicht finanzielle Sorgen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

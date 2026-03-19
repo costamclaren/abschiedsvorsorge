@@ -4,27 +4,27 @@ import { Heart, Euro, Clock, Users } from "lucide-react";
 const reasons = [
   {
     icon: Euro,
-    title: "Bestattungen kosten 5.000–10.000 €",
+    title: "Die Realität: Bestattungen kosten bis 10.000 €",
     description:
-      "Friedhofsgebühren, Bestatter, Grabpflege – die Kosten summieren sich schnell. Seit 2004 gibt es kein gesetzliches Sterbegeld mehr.",
+      "Seit 2004 gibt es kein gesetzliches Sterbegeld mehr. Friedhof, Bestatter, Grabpflege – Ihre Angehörigen tragen diese Last allein.",
   },
   {
     icon: Heart,
-    title: "Liebste entlasten",
+    title: "Ein letztes Geschenk an Ihre Familie",
     description:
-      "Sorgen Sie vor, damit Ihre Familie sich in der Trauerzeit nicht auch noch um Finanzen kümmern muss.",
+      "In der Trauerzeit soll Ihre Familie Abschied nehmen dürfen – ohne sich gleichzeitig Gedanken über Rechnungen machen zu müssen.",
   },
   {
     icon: Clock,
-    title: "Je früher, desto günstiger",
+    title: "Heute vorsorgen, morgen beruhigt sein",
     description:
-      "Je jünger Sie bei Abschluss sind, desto niedriger sind Ihre monatlichen Beiträge – bei gleichem Schutz.",
+      "Je früher Sie beginnen, desto geringer die Beiträge. Schon wenige Euro im Monat reichen für umfassenden Schutz.",
   },
   {
     icon: Users,
-    title: "Unabhängige Beratung",
+    title: "Persönlich. Unabhängig. An Ihrer Seite.",
     description:
-      "Als Versicherungsmakler vergleichen wir für Sie die besten Tarife und finden die passende Lösung.",
+      "Wir hören zu, verstehen Ihre Situation und finden gemeinsam den Tarif, der wirklich zu Ihnen passt.",
   },
 ];
 
@@ -40,11 +40,11 @@ const WhySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Warum Bestattungsvorsorge?
+            Vorsorge aus Liebe
           </h2>
           <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Das Sterben in Deutschland ist teuer. Schützen Sie Ihre Angehörigen
-            vor unerwarteten finanziellen Belastungen.
+            Niemand denkt gerne an den Abschied. Aber wer vorsorgt, schenkt
+            seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
           </p>
         </motion.div>
 
