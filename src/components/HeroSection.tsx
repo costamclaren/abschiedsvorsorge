@@ -3,6 +3,7 @@ import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
 
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
