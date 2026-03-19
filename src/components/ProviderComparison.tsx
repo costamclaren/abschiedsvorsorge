@@ -229,6 +229,44 @@ const ProviderComparison = () => {
             ))}
           </div>
         </div>
+
+        {/* Even more providers - compact list */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-sm font-body text-muted-foreground mb-4">
+            Außerdem vermitteln wir Tarife von:
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+            {[
+              "Monuta",
+              "GE.BE.IN",
+              "Solidar",
+              "Deutsche Familienversicherung",
+              "Nürnberger",
+              "Debeka",
+              "Signal Iduna",
+              "Volkswohlbund",
+            ].map((name) => (
+              <span
+                key={name}
+                className="bg-background text-foreground text-xs font-body px-4 py-2 rounded-full shadow-card border border-border"
+              >
+                {name}
+              </span>
+            ))}
+            <span className="bg-accent/15 text-accent text-xs font-body font-semibold px-4 py-2 rounded-full">
+              u.&thinsp;v.&thinsp;m.
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground font-body mt-4">
+            Sprechen Sie uns an – wir finden den passenden Tarif für Ihre Situation.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
