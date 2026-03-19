@@ -343,13 +343,19 @@ const BestattungskostenRechner = () => {
                   {currentStepData.subtitle}
                 </p>
 
-                <div className="grid gap-3 flex-1">
+                <div className={`grid gap-3 flex-1 ${currentStepData.multiSelect ? "grid-cols-1 sm:grid-cols-2" : ""}`}>
                   {currentStepData.options.map((option) => {
-                    const isSelected = selectedOption?.label === option.label;
+                    const isSelected = currentStepData.multiSelect
+                      ? selectedMulti.some((o) => o.label === option.label)
+                      : selectedOption?.label === option.label;
                     return (
                       <button
                         key={option.label}
-                        onClick={() => handleSelect(option)}
+                        onClick={() =>
+                          currentStepData.multiSelect
+                            ? handleMultiToggle(option)
+                            : handleSelect(option)
+                        }
                         className={`text-left p-4 rounded-lg border-2 transition-all font-body ${
                           isSelected
                             ? "border-primary bg-primary/5 shadow-sm"
@@ -357,15 +363,32 @@ const BestattungskostenRechner = () => {
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <div>
-                            <span className="font-semibold text-foreground text-sm">
-                              {option.label}
-                            </span>
-                            {option.description && (
-                              <p className="text-muted-foreground text-xs mt-0.5">
-                                {option.description}
-                              </p>
+                          <div className="flex items-center gap-2">
+                            {currentStepData.multiSelect && (
+                              <div
+                                className={`w-4 h-4 rounded border-2 flex items-center justify-center flex-shrink-0 ${
+                                  isSelected
+                                    ? "bg-primary border-primary"
+                                    : "border-muted-foreground/40"
+                                }`}
+                              >
+                                {isSelected && (
+                                  <svg className="w-3 h-3 text-primary-foreground" viewBox="0 0 12 12" fill="none">
+                                    <path d="M2 6L5 9L10 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  </svg>
+                                )}
+                              </div>
                             )}
+                            <div>
+                              <span className="font-semibold text-foreground text-sm">
+                                {option.label}
+                              </span>
+                              {option.description && (
+                                <p className="text-muted-foreground text-xs mt-0.5">
+                                  {option.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
                           <span className="text-primary font-semibold text-sm whitespace-nowrap ml-4">
                             + {option.cost.toLocaleString("de-DE")} €
@@ -375,6 +398,12 @@ const BestattungskostenRechner = () => {
                     );
                   })}
                 </div>
+
+                {currentStepData.multiSelect && (
+                  <p className="text-xs text-muted-foreground font-body mt-2">
+                    Mehrfachauswahl möglich – wählen Sie alle gewünschten Leistungen.
+                  </p>
+                )}
 
                 <div className="flex justify-between mt-6 pt-4 border-t border-border">
                   <Button
@@ -388,7 +417,7 @@ const BestattungskostenRechner = () => {
                   </Button>
                   <Button
                     onClick={handleNext}
-                    disabled={!selectedOption}
+                    disabled={!canProceed}
                     className="bg-primary text-primary-foreground font-body"
                   >
                     {currentStep < steps.length - 1 ? "Weiter" : "Ergebnis anzeigen"}
