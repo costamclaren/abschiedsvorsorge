@@ -12,11 +12,11 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-            Kostenlose & unverbindliche Beratung
+            Wir sind für Sie da – persönlich und einfühlsam
           </h2>
           <p className="text-primary-foreground/80 font-body text-lg mb-12 max-w-xl mx-auto">
-            Lassen Sie sich von uns persönlich beraten – wir finden gemeinsam
-            den passenden Tarif für Ihre Bestattungsvorsorge.
+            Ein Gespräch kann so vieles erleichtern. Lassen Sie uns gemeinsam
+            schauen, wie Sie Ihre Familie bestmöglich absichern können.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-8 mb-12">
