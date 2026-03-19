@@ -10,7 +10,15 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 bg-primary/75" />
+      {/* Additional real photo overlay for texture */}
+      <img
+        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=80"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40"
+        loading="eager"
+      />
+      <div className="absolute inset-0 bg-primary/70" />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,11 +46,11 @@ const HeroSection = () => {
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-body text-lg px-8 py-6 shadow-elevated"
               onClick={() =>
                 document
-                  .getElementById("anbieter")
+                  .getElementById("rechner")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              Tarife vergleichen
+              Kosten berechnen
             </Button>
             <Button
               size="lg"
