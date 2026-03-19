@@ -151,6 +151,27 @@ const steps: Step[] = [
       },
     ],
   },
+  {
+    title: "Wie genau möchten Sie die Trauerfeier ausgestalten?",
+    subtitle:
+      "Die Hinterbliebenen müssen letztendlich entscheiden, wie die Trauerfeier ausgestaltet werden soll, damit sie dem verstorbenen Menschen gerecht wird.",
+    key: "trauerfeierDetails",
+    multiSelect: true,
+    options: [
+      { label: "Blumenschmuck", cost: 300 },
+      { label: "Musikalische Begleitung", cost: 275 },
+      { label: "Sargschmuck", cost: 200 },
+      { label: "Trauerkranz", cost: 220 },
+      { label: "Trauerredner", cost: 260 },
+      { label: "Traueranzeige", cost: 450 },
+      { label: "Trauerbrief (30 Personen)", cost: 100 },
+      { label: "Sargträger", cost: 200 },
+      { label: "Sterbekleidung", cost: 100 },
+      { label: "Hygienische Versorgung", cost: 150 },
+      { label: "Leichenschmaus (30 Personen)", cost: 800 },
+      { label: "Aufbahrung / offener Sarg", cost: 300 },
+    ],
+  },
 ];
 
 const BestattungskostenRechner = () => {
