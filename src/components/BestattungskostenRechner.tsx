@@ -177,6 +177,7 @@ const steps: Step[] = [
 const BestattungskostenRechner = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, Option | null>>({});
+  const [multiSelections, setMultiSelections] = useState<Record<string, Option[]>>({});
   const [showResult, setShowResult] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -189,11 +190,17 @@ const BestattungskostenRechner = () => {
 
   const currentStepData = steps[currentStep];
   const selectedOption = selections[currentStepData?.key] || null;
+  const selectedMulti = multiSelections[currentStepData?.key] || [];
 
-  const totalCost = Object.values(selections).reduce(
+  const singleCost = Object.values(selections).reduce(
     (sum, opt) => sum + (opt?.cost || 0),
     0
   );
+  const multiCost = Object.values(multiSelections).reduce(
+    (sum, opts) => sum + opts.reduce((s, o) => s + o.cost, 0),
+    0
+  );
+  const totalCost = singleCost + multiCost;
 
   const handleSelect = (option: Option) => {
     setSelections((prev) => ({
@@ -202,8 +209,23 @@ const BestattungskostenRechner = () => {
     }));
   };
 
+  const handleMultiToggle = (option: Option) => {
+    setMultiSelections((prev) => {
+      const current = prev[currentStepData.key] || [];
+      const exists = current.some((o) => o.label === option.label);
+      return {
+        ...prev,
+        [currentStepData.key]: exists
+          ? current.filter((o) => o.label !== option.label)
+          : [...current, option],
+      };
+    });
+  };
+
+  const canProceed = currentStepData?.multiSelect ? true : !!selectedOption;
+
   const handleNext = () => {
-    if (!selectedOption) return;
+    if (!currentStepData.multiSelect && !selectedOption) return;
     if (currentStep < steps.length - 1) {
       setCurrentStep((s) => s + 1);
     } else {
@@ -222,6 +244,7 @@ const BestattungskostenRechner = () => {
   const handleReset = () => {
     setCurrentStep(0);
     setSelections({});
+    setMultiSelections({});
     setShowResult(false);
   };
 
