@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
 
@@ -12,7 +13,7 @@ const HeroSection = () => {
       />
       {/* Additional real photo overlay for texture */}
       <img
-        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=80"
+        src={handsImg}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40"

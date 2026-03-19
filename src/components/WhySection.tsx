@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Euro, Clock, Users } from "lucide-react";
+import coupleLakeImg from "@/assets/couple-lake.jpg";
 
 const reasons = [
   {
@@ -47,6 +48,20 @@ const WhySection = () => {
               Niemand denkt gerne an den Abschied. Aber wer vorsorgt, schenkt
               seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
             </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-lg overflow-hidden shadow-elevated"
+          >
+            <img
+              src={coupleLakeImg}
+              alt="Paar sitzt gemeinsam am See"
+              className="w-full h-64 md:h-80 object-cover"
+              loading="lazy"
+            />
           </motion.div>
         </div>
 

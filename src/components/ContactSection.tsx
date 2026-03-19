@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import coupleBenchImg from "@/assets/couple-bench.jpg";
 
 const ContactSection = () => {
   return (
@@ -7,8 +8,8 @@ const ContactSection = () => {
       {/* Image banner */}
       <div className="relative h-48 md:h-64 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80"
-          alt="Persönliche Beratung"
+          src={coupleBenchImg}
+          alt="Älteres Paar auf einer Bank"
           className="w-full h-full object-cover"
           loading="lazy"
         />
