@@ -6,11 +6,11 @@ const ContactSection = () => {
   return (
     <section id="kontakt" className="relative">
       {/* Image banner */}
-      <div className="relative h-48 md:h-64 overflow-hidden">
+      <div className="relative h-56 md:h-72 overflow-hidden">
         <img
           src={coupleBenchImg}
           alt="Älteres Paar auf einer Bank"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-primary/80" />
