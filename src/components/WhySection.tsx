@@ -54,14 +54,12 @@ const WhySection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-lg overflow-hidden shadow-elevated py-[100px] pb-0">
-            
+            className="rounded-2xl overflow-hidden shadow-elevated">
             <img
               src={coupleLakeImg}
               alt="Paar sitzt gemeinsam am See"
-              className="w-full h-64 md:h-80 object-cover"
+              className="w-full h-72 md:h-96 object-cover object-center"
               loading="lazy" />
-            
           </motion.div>
         </div>
 

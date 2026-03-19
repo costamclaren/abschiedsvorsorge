@@ -16,7 +16,7 @@ const HeroSection = () => {
         src={handsImg}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40"
+        className="absolute inset-0 w-full h-full object-cover object-center mix-blend-overlay opacity-40"
         loading="eager"
       />
       <div className="absolute inset-0 bg-primary/70" />
