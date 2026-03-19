@@ -4,27 +4,27 @@ import { Heart, Euro, Clock, Users } from "lucide-react";
 const reasons = [
   {
     icon: Euro,
-    title: "Bestattungen kosten 5.000–10.000 €",
+    title: "Die Realität: Bestattungen kosten bis 10.000 €",
     description:
-      "Friedhofsgebühren, Bestatter, Grabpflege – die Kosten summieren sich schnell. Seit 2004 gibt es kein gesetzliches Sterbegeld mehr.",
+      "Seit 2004 gibt es kein gesetzliches Sterbegeld mehr. Friedhof, Bestatter, Grabpflege – Ihre Angehörigen tragen diese Last allein.",
   },
   {
     icon: Heart,
-    title: "Liebste entlasten",
+    title: "Ein letztes Geschenk an Ihre Familie",
     description:
-      "Sorgen Sie vor, damit Ihre Familie sich in der Trauerzeit nicht auch noch um Finanzen kümmern muss.",
+      "In der Trauerzeit soll Ihre Familie Abschied nehmen dürfen – ohne sich gleichzeitig Gedanken über Rechnungen machen zu müssen.",
   },
   {
     icon: Clock,
-    title: "Je früher, desto günstiger",
+    title: "Heute vorsorgen, morgen beruhigt sein",
     description:
-      "Je jünger Sie bei Abschluss sind, desto niedriger sind Ihre monatlichen Beiträge – bei gleichem Schutz.",
+      "Je früher Sie beginnen, desto geringer die Beiträge. Schon wenige Euro im Monat reichen für umfassenden Schutz.",
   },
   {
     icon: Users,
-    title: "Unabhängige Beratung",
+    title: "Persönlich. Unabhängig. An Ihrer Seite.",
     description:
-      "Als Versicherungsmakler vergleichen wir für Sie die besten Tarife und finden die passende Lösung.",
+      "Wir hören zu, verstehen Ihre Situation und finden gemeinsam den Tarif, der wirklich zu Ihnen passt.",
   },
 ];
 
