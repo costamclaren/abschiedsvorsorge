@@ -51,16 +51,16 @@ const additionalProviders = [
     highlight: "Bekannte deutsche Marke",
   },
   {
-    name: "Monuta",
-    tagline: "Bestattungsvorsorge-Spezialist aus den Niederlanden",
+    name: "Stuttgarter",
+    tagline: "Württembergischer Traditionsversicherer seit 1908",
     features: [
-      "Versicherungssumme bis 15.000 €",
-      "Ohne Gesundheitsprüfung",
+      "Versicherungssumme 2.500 – 20.000 €",
+      "Ohne Gesundheitsfragen",
       "Sofortschutz bei Unfalltod",
-      "Bestattungsvorsorgevertrag möglich",
-      "Persönliche Bestattungsplanung inklusive",
+      "Überschussbeteiligung möglich",
+      "Beitragszahlung bis Alter 85 wählbar",
     ],
-    highlight: "Vorsorge & Versicherung aus einer Hand",
+    highlight: "Solide Finanzstärke",
   },
   {
     name: "Ideal Versicherung",
