@@ -444,6 +444,30 @@ const BestattungskostenRechner = () => {
 
                 <div className="space-y-3 mb-6">
                   {steps.map((step) => {
+                    if (step.multiSelect) {
+                      const multi = multiSelections[step.key] || [];
+                      if (multi.length === 0) return null;
+                      const multiTotal = multi.reduce((s, o) => s + o.cost, 0);
+                      return (
+                        <div key={step.key} className="py-2 border-b border-border last:border-b-0">
+                          <span className="text-xs text-muted-foreground font-body">
+                            {step.title.replace("?", "")}
+                          </span>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {multi.map((o) => (
+                              <span key={o.label} className="text-xs bg-secondary px-2 py-0.5 rounded font-body text-foreground">
+                                {o.label} (+{o.cost} €)
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex justify-end mt-1">
+                            <span className="text-sm font-semibold text-foreground font-body">
+                              {multiTotal.toLocaleString("de-DE")} €
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    }
                     const sel = selections[step.key];
                     return (
                       <div
