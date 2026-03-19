@@ -248,9 +248,9 @@ const ProviderComparison = () => {
               "Nürnberger",
               "Signal Iduna",
               "Volkswohlbund",
-              "Cosmos Direkt",
               "HDH",
               "Süddeutsche Lebensversicherung",
+              "Bayerische Beamtenversicherung",
             ].map((name) => (
               <span
                 key={name}
