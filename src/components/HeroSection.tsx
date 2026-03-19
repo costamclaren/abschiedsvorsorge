@@ -6,19 +6,13 @@ import { Shield } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      {/* Additional real photo overlay for texture */}
       <img
         src={handsImg}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center mix-blend-overlay opacity-40"
+        alt="Hände als Symbol für Fürsorge und Verbundenheit"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
       />
-      <div className="absolute inset-0 bg-primary/70" />
+      <div className="absolute inset-0 bg-primary/55" />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
