@@ -6,14 +6,14 @@ const ContactSection = () => {
   return (
     <section id="kontakt" className="relative">
       {/* Image banner */}
-      <div className="relative h-56 md:h-72 overflow-hidden">
+      <div className="relative h-64 md:h-80 overflow-hidden">
         <img
           src={coupleBenchImg}
           alt="Älteres Paar auf einer Bank"
           className="w-full h-full object-cover object-center"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-primary/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
