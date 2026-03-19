@@ -315,7 +315,7 @@ const BestattungskostenRechner = () => {
                 width: `${
                   showResult
                     ? 100
-                    : ((currentStep + (selectedOption ? 1 : 0.5)) /
+                    : ((currentStep + (canProceed ? 1 : 0.5)) /
                         steps.length) *
                       100
                 }%`,
