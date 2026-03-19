@@ -1,0 +1,93 @@
+import { motion } from "framer-motion";
+import { Star, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Hildegard M.",
+    age: 74,
+    location: "Hamburg",
+    text: "Nach dem Tod meines Mannes wusste ich, wie wichtig Vorsorge ist. Die Beratung war so einfühlsam – ich fühlte mich verstanden, nicht gedrängt. Jetzt bin ich beruhigt, dass meine Kinder nicht belastet werden.",
+    stars: 5,
+  },
+  {
+    name: "Werner K.",
+    age: 68,
+    location: "München",
+    text: "Ich habe lange gezögert, mich mit dem Thema zu beschäftigen. Herr Costa hat mir alles in Ruhe erklärt und den passenden Tarif gefunden. Ein großes Gewicht ist von meinen Schultern gefallen.",
+    stars: 5,
+  },
+  {
+    name: "Ingeborg S.",
+    age: 71,
+    location: "Düsseldorf",
+    text: "Meine Nachbarin hat mich empfohlen. Die persönliche Betreuung ist wirklich außergewöhnlich. Man merkt, dass hier Menschen arbeiten, denen es wirklich am Herzen liegt.",
+    stars: 5,
+  },
+  {
+    name: "Helmut R.",
+    age: 76,
+    location: "Stuttgart",
+    text: "Als mein Bruder starb, musste die Familie plötzlich über 8.000 € aufbringen. Das wollte ich meinen Kindern ersparen. Dank der Beratung habe ich jetzt eine Lösung, die zu meiner Rente passt.",
+    stars: 5,
+  },
+];
+
+const TestimonialsSection = () => {
+  return (
+    <section className="py-20 md:py-28 bg-secondary/30">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+            Was unsere Kunden sagen
+          </h2>
+          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
+            Vertrauen entsteht durch ehrliche Gespräche. Lesen Sie, was
+            Menschen berichten, die bereits vorgesorgt haben.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((t, index) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-card rounded-lg p-8 shadow-card relative"
+            >
+              <Quote className="w-8 h-8 text-primary/15 absolute top-6 right-6" />
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: t.stars }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-accent text-accent"
+                  />
+                ))}
+              </div>
+              <p className="text-foreground/85 font-body text-sm leading-relaxed mb-6 italic">
+                „{t.text}"
+              </p>
+              <div className="border-t border-border pt-4">
+                <p className="font-heading font-semibold text-foreground text-sm">
+                  {t.name}
+                </p>
+                <p className="text-muted-foreground font-body text-xs">
+                  {t.age} Jahre · {t.location}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
