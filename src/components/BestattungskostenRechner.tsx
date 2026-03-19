@@ -24,6 +24,7 @@ type Step = {
   subtitle: string;
   options: Option[];
   key: string;
+  multiSelect?: boolean;
 };
 
 const steps: Step[] = [
@@ -150,11 +151,33 @@ const steps: Step[] = [
       },
     ],
   },
+  {
+    title: "Wie genau möchten Sie die Trauerfeier ausgestalten?",
+    subtitle:
+      "Die Hinterbliebenen müssen letztendlich entscheiden, wie die Trauerfeier ausgestaltet werden soll, damit sie dem verstorbenen Menschen gerecht wird.",
+    key: "trauerfeierDetails",
+    multiSelect: true,
+    options: [
+      { label: "Blumenschmuck", cost: 300 },
+      { label: "Musikalische Begleitung", cost: 275 },
+      { label: "Sargschmuck", cost: 200 },
+      { label: "Trauerkranz", cost: 220 },
+      { label: "Trauerredner", cost: 260 },
+      { label: "Traueranzeige", cost: 450 },
+      { label: "Trauerbrief (30 Personen)", cost: 100 },
+      { label: "Sargträger", cost: 200 },
+      { label: "Sterbekleidung", cost: 100 },
+      { label: "Hygienische Versorgung", cost: 150 },
+      { label: "Leichenschmaus (30 Personen)", cost: 800 },
+      { label: "Aufbahrung / offener Sarg", cost: 300 },
+    ],
+  },
 ];
 
 const BestattungskostenRechner = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, Option | null>>({});
+  const [multiSelections, setMultiSelections] = useState<Record<string, Option[]>>({});
   const [showResult, setShowResult] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -167,11 +190,17 @@ const BestattungskostenRechner = () => {
 
   const currentStepData = steps[currentStep];
   const selectedOption = selections[currentStepData?.key] || null;
+  const selectedMulti = multiSelections[currentStepData?.key] || [];
 
-  const totalCost = Object.values(selections).reduce(
+  const singleCost = Object.values(selections).reduce(
     (sum, opt) => sum + (opt?.cost || 0),
     0
   );
+  const multiCost = Object.values(multiSelections).reduce(
+    (sum, opts) => sum + opts.reduce((s, o) => s + o.cost, 0),
+    0
+  );
+  const totalCost = singleCost + multiCost;
 
   const handleSelect = (option: Option) => {
     setSelections((prev) => ({
@@ -180,8 +209,23 @@ const BestattungskostenRechner = () => {
     }));
   };
 
+  const handleMultiToggle = (option: Option) => {
+    setMultiSelections((prev) => {
+      const current = prev[currentStepData.key] || [];
+      const exists = current.some((o) => o.label === option.label);
+      return {
+        ...prev,
+        [currentStepData.key]: exists
+          ? current.filter((o) => o.label !== option.label)
+          : [...current, option],
+      };
+    });
+  };
+
+  const canProceed = currentStepData?.multiSelect ? true : !!selectedOption;
+
   const handleNext = () => {
-    if (!selectedOption) return;
+    if (!currentStepData.multiSelect && !selectedOption) return;
     if (currentStep < steps.length - 1) {
       setCurrentStep((s) => s + 1);
     } else {
@@ -200,6 +244,7 @@ const BestattungskostenRechner = () => {
   const handleReset = () => {
     setCurrentStep(0);
     setSelections({});
+    setMultiSelections({});
     setShowResult(false);
   };
 
@@ -270,7 +315,7 @@ const BestattungskostenRechner = () => {
                 width: `${
                   showResult
                     ? 100
-                    : ((currentStep + (selectedOption ? 1 : 0.5)) /
+                    : ((currentStep + (canProceed ? 1 : 0.5)) /
                         steps.length) *
                       100
                 }%`,
@@ -298,13 +343,19 @@ const BestattungskostenRechner = () => {
                   {currentStepData.subtitle}
                 </p>
 
-                <div className="grid gap-3 flex-1">
+                <div className={`grid gap-3 flex-1 ${currentStepData.multiSelect ? "grid-cols-1 sm:grid-cols-2" : ""}`}>
                   {currentStepData.options.map((option) => {
-                    const isSelected = selectedOption?.label === option.label;
+                    const isSelected = currentStepData.multiSelect
+                      ? selectedMulti.some((o) => o.label === option.label)
+                      : selectedOption?.label === option.label;
                     return (
                       <button
                         key={option.label}
-                        onClick={() => handleSelect(option)}
+                        onClick={() =>
+                          currentStepData.multiSelect
+                            ? handleMultiToggle(option)
+                            : handleSelect(option)
+                        }
                         className={`text-left p-4 rounded-lg border-2 transition-all font-body ${
                           isSelected
                             ? "border-primary bg-primary/5 shadow-sm"
@@ -312,15 +363,32 @@ const BestattungskostenRechner = () => {
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <div>
-                            <span className="font-semibold text-foreground text-sm">
-                              {option.label}
-                            </span>
-                            {option.description && (
-                              <p className="text-muted-foreground text-xs mt-0.5">
-                                {option.description}
-                              </p>
+                          <div className="flex items-center gap-2">
+                            {currentStepData.multiSelect && (
+                              <div
+                                className={`w-4 h-4 rounded border-2 flex items-center justify-center flex-shrink-0 ${
+                                  isSelected
+                                    ? "bg-primary border-primary"
+                                    : "border-muted-foreground/40"
+                                }`}
+                              >
+                                {isSelected && (
+                                  <svg className="w-3 h-3 text-primary-foreground" viewBox="0 0 12 12" fill="none">
+                                    <path d="M2 6L5 9L10 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  </svg>
+                                )}
+                              </div>
                             )}
+                            <div>
+                              <span className="font-semibold text-foreground text-sm">
+                                {option.label}
+                              </span>
+                              {option.description && (
+                                <p className="text-muted-foreground text-xs mt-0.5">
+                                  {option.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
                           <span className="text-primary font-semibold text-sm whitespace-nowrap ml-4">
                             + {option.cost.toLocaleString("de-DE")} €
@@ -330,6 +398,12 @@ const BestattungskostenRechner = () => {
                     );
                   })}
                 </div>
+
+                {currentStepData.multiSelect && (
+                  <p className="text-xs text-muted-foreground font-body mt-2">
+                    Mehrfachauswahl möglich – wählen Sie alle gewünschten Leistungen.
+                  </p>
+                )}
 
                 <div className="flex justify-between mt-6 pt-4 border-t border-border">
                   <Button
@@ -343,7 +417,7 @@ const BestattungskostenRechner = () => {
                   </Button>
                   <Button
                     onClick={handleNext}
-                    disabled={!selectedOption}
+                    disabled={!canProceed}
                     className="bg-primary text-primary-foreground font-body"
                   >
                     {currentStep < steps.length - 1 ? "Weiter" : "Ergebnis anzeigen"}
@@ -370,6 +444,30 @@ const BestattungskostenRechner = () => {
 
                 <div className="space-y-3 mb-6">
                   {steps.map((step) => {
+                    if (step.multiSelect) {
+                      const multi = multiSelections[step.key] || [];
+                      if (multi.length === 0) return null;
+                      const multiTotal = multi.reduce((s, o) => s + o.cost, 0);
+                      return (
+                        <div key={step.key} className="py-2 border-b border-border last:border-b-0">
+                          <span className="text-xs text-muted-foreground font-body">
+                            {step.title.replace("?", "")}
+                          </span>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {multi.map((o) => (
+                              <span key={o.label} className="text-xs bg-secondary px-2 py-0.5 rounded font-body text-foreground">
+                                {o.label} (+{o.cost} €)
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex justify-end mt-1">
+                            <span className="text-sm font-semibold text-foreground font-body">
+                              {multiTotal.toLocaleString("de-DE")} €
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    }
                     const sel = selections[step.key];
                     return (
                       <div
