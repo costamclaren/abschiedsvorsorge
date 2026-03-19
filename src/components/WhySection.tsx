@@ -56,7 +56,7 @@ const WhySection = () => {
             className="rounded-lg overflow-hidden shadow-elevated"
           >
             <img
-              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80"
+              src="https://images.unsplash.com/photo-1447005497901-b3e9ee359928?w=800&q=80"
               alt="Älteres Ehepaar geht zusammen spazieren"
               className="w-full h-64 md:h-80 object-cover"
               loading="lazy"
