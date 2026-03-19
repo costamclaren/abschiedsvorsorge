@@ -24,6 +24,7 @@ type Step = {
   subtitle: string;
   options: Option[];
   key: string;
+  multiSelect?: boolean;
 };
 
 const steps: Step[] = [
