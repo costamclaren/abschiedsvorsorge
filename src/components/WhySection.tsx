@@ -48,20 +48,6 @@ const WhySection = () => {
               seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-lg overflow-hidden shadow-elevated"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1447005497901-b3e9ee359928?w=800&q=80"
-              alt="Älteres Ehepaar geht zusammen spazieren"
-              className="w-full h-64 md:h-80 object-cover"
-              loading="lazy"
-            />
-          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
