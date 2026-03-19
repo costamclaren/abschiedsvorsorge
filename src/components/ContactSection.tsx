@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import coupleBenchImg from "@/assets/couple-bench.jpg";
 
 const ContactSection = () => {
   return (
