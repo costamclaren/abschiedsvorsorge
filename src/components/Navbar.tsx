@@ -12,6 +12,12 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center gap-8 font-body text-sm text-primary-foreground/80">
           <a
+            href="#rechner"
+            className="hover:text-accent transition-colors"
+          >
+            Rechner
+          </a>
+          <a
             href="#anbieter"
             className="hover:text-accent transition-colors"
           >
