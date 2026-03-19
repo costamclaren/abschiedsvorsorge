@@ -40,11 +40,11 @@ const WhySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Warum Bestattungsvorsorge?
+            Vorsorge aus Liebe
           </h2>
           <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Das Sterben in Deutschland ist teuer. Schützen Sie Ihre Angehörigen
-            vor unerwarteten finanziellen Belastungen.
+            Niemand denkt gerne an den Abschied. Aber wer vorsorgt, schenkt
+            seinen Liebsten etwas Unbezahlbares: Ruhe in der schwersten Zeit.
           </p>
         </motion.div>
 
