@@ -243,14 +243,14 @@ const ProviderComparison = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {[
-              "Monuta",
-              "GE.BE.IN",
               "Solidar",
               "Deutsche Familienversicherung",
               "Nürnberger",
-              "Debeka",
               "Signal Iduna",
               "Volkswohlbund",
+              "Cosmos Direkt",
+              "HDH",
+              "Süddeutsche Lebensversicherung",
             ].map((name) => (
               <span
                 key={name}
