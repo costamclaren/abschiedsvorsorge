@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Euro, Clock, Users } from "lucide-react";
+import coupleLakeImg from "@/assets/couple-lake.jpg";
 
 const reasons = [
   {
