@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
