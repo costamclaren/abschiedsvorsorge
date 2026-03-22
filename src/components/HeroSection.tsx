@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import handsImg from "@/assets/hands.jpg";
+import logoImg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
 
 
 const HeroSection = () => {
@@ -20,11 +20,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Shield className="w-6 h-6 text-accent" />
-            <span className="text-accent font-body text-sm font-semibold uppercase tracking-widest">
-              Costa & McLaren Versicherungsmakler GmbH
-            </span>
+          <div className="flex items-center justify-center mb-6">
+            <img src={logoImg} alt="Costa & McLaren Logo" className="h-16 md:h-20 w-auto" />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
             Weil Liebe auch
