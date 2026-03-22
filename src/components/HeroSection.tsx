@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import handsImg from "@/assets/hands.jpg";
+import logoImg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
 
 
 const HeroSection = () => {
