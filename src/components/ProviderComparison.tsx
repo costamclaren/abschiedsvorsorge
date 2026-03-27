@@ -23,7 +23,7 @@ const featuredProviders = [
   },
   {
     name: "DELA",
-    tagline: "Niederländische Abschiedsvorsorge-Spezialisten seit 1937",
+    tagline: "Niederländische Bestattungsvorsorge-Spezialisten seit 1937",
     features: [
       "Versicherungssumme bis 25.000 €",
       "Ohne Gesundheitsfragen",
@@ -34,7 +34,7 @@ const featuredProviders = [
       "Über 4 Mio. Kunden in Europa",
       "Flexible Beitragszahlungsdauer",
     ],
-    highlight: "Spezialist für Abschiedsvorsorge",
+    highlight: "Spezialist für Bestattungsvorsorge",
     featured: true,
   },
 ];

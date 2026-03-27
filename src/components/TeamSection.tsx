@@ -56,7 +56,7 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
           </h2>
           <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
             Persönlich, erfahren und immer für Sie da – lernen Sie die
-            Menschen hinter unserer Abschiedsvorsorge kennen.
+            Menschen hinter unserer Bestattungsvorsorge kennen.
           </p>
         </motion.div>
 
