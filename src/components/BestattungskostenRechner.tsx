@@ -316,7 +316,7 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
             Detaillierter Rechner
           </button>
           <button
-            onClick={() => setMode("slider")}
+            onClick={() => { setSliderValue([7500]); setMode("slider"); }}
             className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-md text-sm font-body font-medium transition-all ${
               mode === "slider"
                 ? "bg-card text-foreground shadow-sm"
