@@ -51,10 +51,10 @@ const ContactSection = () => {
                   Telefon
                 </span>
                 <a
-                  href="tel:+4900000000"
+                  href="tel:+492181-68717"
                   className="text-primary-foreground/80 font-body text-sm hover:text-accent transition-colors"
                 >
-                  +49 (0) 000 000 000
+                  02181-68717
                 </a>
               </div>
               <div className="flex flex-col items-center gap-3">
@@ -65,10 +65,10 @@ const ContactSection = () => {
                   E-Mail
                 </span>
                 <a
-                  href="mailto:info@costa-mclaren.de"
+                  href="mailto:info@abschiedsvorsorge.de"
                   className="text-primary-foreground/80 font-body text-sm hover:text-accent transition-colors"
                 >
-                  info@costa-mclaren.de
+                  info@abschiedsvorsorge.de
                 </a>
               </div>
               <div className="flex flex-col items-center gap-3">
@@ -79,7 +79,7 @@ const ContactSection = () => {
                   Standort
                 </span>
                 <span className="text-primary-foreground/80 font-body text-sm">
-                  Deutschland
+                  Poststr. 60, 41516 Grevenbroich
                 </span>
               </div>
             </div>
