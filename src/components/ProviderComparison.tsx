@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Star, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RechnerDialog from "@/components/RechnerDialog";
 
 const featuredProviders = [
   {
@@ -89,7 +91,11 @@ const additionalProviders = [
 ];
 
 const ProviderComparison = () => {
+  const [rechnerOpen, setRechnerOpen] = useState(false);
+
   return (
+    <>
+    <RechnerDialog open={rechnerOpen} onOpenChange={setRechnerOpen} />
     <section id="anbieter" className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
@@ -157,11 +163,7 @@ const ProviderComparison = () => {
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body"
-                    onClick={() =>
-                      document
-                        .getElementById("rechner")
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }
+                    onClick={() => setRechnerOpen(true)}
                   >
                     Jetzt beraten lassen
                   </Button>
@@ -271,6 +273,7 @@ const ProviderComparison = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 

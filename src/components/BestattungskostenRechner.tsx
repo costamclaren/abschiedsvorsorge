@@ -174,7 +174,11 @@ const steps: Step[] = [
   },
 ];
 
-const BestattungskostenRechner = () => {
+interface BestattungskostenRechnerProps {
+  embedded?: boolean;
+}
+
+const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechnerProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, Option | null>>({});
   const [multiSelections, setMultiSelections] = useState<Record<string, Option[]>>({});
@@ -271,9 +275,9 @@ const BestattungskostenRechner = () => {
     setFormData({ vorname: "", nachname: "", email: "", telefon: "", geburtsdatum: "" });
   };
 
-  return (
-    <section id="rechner" className="py-20 md:py-28 bg-background">
-      <div className="max-w-3xl mx-auto px-6">
+  const renderCalculator = () => (
+    <>
+      {!embedded && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -293,6 +297,7 @@ const BestattungskostenRechner = () => {
             sinnvoll ist.
           </p>
         </motion.div>
+      )}
 
         {/* Progress bar */}
         <div className="mb-8">
@@ -668,6 +673,17 @@ const BestattungskostenRechner = () => {
             </form>
           </DialogContent>
         </Dialog>
+    </>
+  );
+
+  if (embedded) {
+    return renderCalculator();
+  }
+
+  return (
+    <section id="rechner" className="py-20 md:py-28 bg-background">
+      <div className="max-w-3xl mx-auto px-6">
+        {renderCalculator()}
       </div>
     </section>
   );
