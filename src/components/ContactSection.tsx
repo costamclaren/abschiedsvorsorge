@@ -84,9 +84,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <p className="text-primary-foreground/60 font-body text-xs">
-              Ihr unabhängiger Partner für Abschiedsvorsorge
-            </p>
           </motion.div>
         </div>
       </div>
