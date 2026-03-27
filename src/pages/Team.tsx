@@ -8,22 +8,13 @@ import marcoImg from "@/assets/marco-costa.png";
 
 const teamMembers = [
   {
-    name: "Max Costa",
-    role: "Geschäftsführer & Versicherungsmakler",
-    email: "costa@costa-mclaren.de",
-    phone: "+49 123 456 789",
-    image: "",
+    name: "Marco Costa",
+    role: "Berater Bestattungsvorsorge",
+    email: "bestattungsvorsorge@costa-mclaren.de",
+    phone: "",
+    image: marcoImg,
     description:
-      "Mit über 15 Jahren Erfahrung in der Versicherungsbranche berät Max Costa Familien einfühlsam und kompetent rund um das Thema Abschiedsvorsorge.",
-  },
-  {
-    name: "Sarah McLaren",
-    role: "Senior Beraterin & Partnerin",
-    email: "mclaren@costa-mclaren.de",
-    phone: "+49 123 456 780",
-    image: "",
-    description:
-      "Sarah McLaren verbindet fachliche Expertise mit persönlicher Nähe und begleitet ihre Kunden vom ersten Gespräch bis zum vollständigen Abschluss.",
+      "Marco Costa berät Sie persönlich und kompetent zu allen Fragen der Bestattungsvorsorge – vertrauensvoll und mit dem Blick fürs Wesentliche.",
   },
   {
     name: "Ioannis Laloussis",
@@ -42,15 +33,6 @@ const teamMembers = [
     image: lauraImg,
     description:
       "Laura Zabel steht Ihnen mit Empathie und Fachkompetenz zur Seite und begleitet Sie einfühlsam bei der Planung Ihrer Bestattungsvorsorge.",
-  },
-  {
-    name: "Marco Costa",
-    role: "Berater Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "",
-    image: marcoImg,
-    description:
-      "Marco Costa berät Sie persönlich und kompetent zu allen Fragen der Bestattungsvorsorge – vertrauensvoll und mit dem Blick fürs Wesentliche.",
   },
 ];
 
