@@ -11,7 +11,7 @@ const teamMembers = [
     name: "Marco Costa",
     role: "Berater Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "",
+    phone: "0176-70806065",
     image: marcoImg,
     description:
       "Marco Costa berät Sie persönlich und kompetent zu allen Fragen der Bestattungsvorsorge – vertrauensvoll und mit dem Blick fürs Wesentliche.",
@@ -29,7 +29,7 @@ const teamMembers = [
     name: "Laura Zabel",
     role: "Beraterin Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "",
+    phone: "02181-68717",
     image: lauraImg,
     description:
       "Laura Zabel steht Ihnen mit Empathie und Fachkompetenz zur Seite und begleitet Sie einfühlsam bei der Planung Ihrer Bestattungsvorsorge.",
