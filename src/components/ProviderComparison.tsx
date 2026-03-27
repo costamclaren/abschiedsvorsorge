@@ -282,7 +282,6 @@ const ProviderComparison = () => {
               "Solidar",
               "Deutsche Familienversicherung",
               "Nürnberger",
-              "Signal Iduna",
               "Volkswohlbund",
               "HDH",
               "Süddeutsche Lebensversicherung",
