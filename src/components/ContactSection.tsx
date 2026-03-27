@@ -38,7 +38,9 @@ const ContactSection = () => {
             className="text-center"
           >
             <p className="text-primary-foreground/80 font-body text-lg mb-12 max-w-xl mx-auto">
-              Ein Gespräch kann so vieles erleichtern. Lassen Sie uns gemeinsam
+              Ein Gespräch kann so vieles erleichtern.
+              <br />
+              Lassen Sie uns gemeinsam
               schauen, wie Sie Ihre Familie bestmöglich absichern können.
             </p>
 
