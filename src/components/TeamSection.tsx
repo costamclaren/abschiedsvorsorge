@@ -13,7 +13,7 @@ export const teamMembers = [
     email: "bestattungsvorsorge@costa-mclaren.de",
     phone: "0176 70806065",
     image: marcoImg,
-    imageClass: "scale-[1.6] -translate-y-[10%]",
+    imageClass: "scale-[1.35] translate-y-[2%]",
     description:
       "Marco hilft Ihnen, die richtige Absicherung für Ihre Familie zu finden – praxisnah, ehrlich und auf Augenhöhe.",
   },
