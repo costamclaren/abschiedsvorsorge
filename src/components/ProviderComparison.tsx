@@ -214,18 +214,6 @@ const ProviderComparison = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full font-body text-xs"
-                    onClick={() =>
-                      document
-                        .getElementById("kontakt")
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }
-                  >
-                    Mehr erfahren
-                  </Button>
                 </div>
               </motion.div>
             ))}
