@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
+import RechnerDialog from "@/components/RechnerDialog";
 
 
 const HeroSection = () => {
+  const [rechnerOpen, setRechnerOpen] = useState(false);
+
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <img
@@ -32,11 +36,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-body text-lg px-8 py-6 shadow-elevated"
-              onClick={() =>
-                document
-                  .getElementById("rechner")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => setRechnerOpen(true)}
             >
               Kosten berechnen
             </Button>
@@ -55,6 +55,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+      <RechnerDialog open={rechnerOpen} onOpenChange={setRechnerOpen} />
     </section>
   );
 };
