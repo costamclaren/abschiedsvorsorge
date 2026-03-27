@@ -11,7 +11,7 @@ const teamMembers = [
     phone: "+49 123 456 789",
     image: "",
     description:
-      "Mit über 15 Jahren Erfahrung in der Versicherungsbranche berät Max Costa Familien einfühlsam und kompetent rund um das Thema Bestattungsvorsorge.",
+      "Mit über 15 Jahren Erfahrung in der Versicherungsbranche berät Max Costa Familien einfühlsam und kompetent rund um das Thema Abschiedsvorsorge.",
   },
   {
     name: "Sarah McLaren",
@@ -41,7 +41,7 @@ const Team = () => {
             </h1>
             <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
               Persönlich, erfahren und immer für Sie da – lernen Sie die
-              Menschen hinter unserer Bestattungsvorsorge kennen.
+              Menschen hinter unserer Abschiedsvorsorge kennen.
             </p>
           </motion.div>
 
