@@ -91,7 +91,11 @@ const additionalProviders = [
 ];
 
 const ProviderComparison = () => {
+  const [rechnerOpen, setRechnerOpen] = useState(false);
+
   return (
+    <>
+    <RechnerDialog open={rechnerOpen} onOpenChange={setRechnerOpen} />
     <section id="anbieter" className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
