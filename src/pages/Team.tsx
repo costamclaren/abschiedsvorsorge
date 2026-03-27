@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import ioannisImg from "@/assets/ioannis-laloussis.jpg";
+import lauraImg from "@/assets/laura-zabel.jpg";
 
 const teamMembers = [
   {
@@ -31,6 +32,15 @@ const teamMembers = [
     image: ioannisImg,
     description:
       "Ioannis Laloussis berät Sie persönlich und einfühlsam zu allen Fragen rund um die Bestattungsvorsorge – kompetent und vertrauensvoll.",
+  },
+  {
+    name: "Laura Zabel",
+    role: "Beraterin Bestattungsvorsorge",
+    email: "bestattungsvorsorge@costa-mclaren.de",
+    phone: "",
+    image: lauraImg,
+    description:
+      "Laura Zabel steht Ihnen mit Empathie und Fachkompetenz zur Seite und begleitet Sie einfühlsam bei der Planung Ihrer Bestattungsvorsorge.",
   },
 ];
 
@@ -69,7 +79,7 @@ const Team = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <span className="font-heading text-6xl font-bold text-muted-foreground/30">
