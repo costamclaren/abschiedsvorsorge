@@ -278,6 +278,9 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
   return (
     <section id="rechner" className="py-20 md:py-28 bg-background">
       <div className="max-w-3xl mx-auto px-6">
+  const calculatorContent = (
+    <>
+      {!embedded && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -297,6 +300,7 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
             sinnvoll ist.
           </p>
         </motion.div>
+      )}
 
         {/* Progress bar */}
         <div className="mb-8">
