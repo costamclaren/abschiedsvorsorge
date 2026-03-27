@@ -85,8 +85,7 @@ const ContactSection = () => {
             </div>
 
             <p className="text-primary-foreground/60 font-body text-xs">
-              Costa & McLaren Versicherungsmakler GmbH – Ihr unabhängiger Partner
-              für Bestattungsvorsorge
+              Ihr unabhängiger Partner für Bestattungsvorsorge
             </p>
           </motion.div>
         </div>
