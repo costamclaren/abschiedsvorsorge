@@ -4,6 +4,7 @@ import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import ioannisImg from "@/assets/ioannis-laloussis.jpg";
 import lauraImg from "@/assets/laura-zabel.jpg";
+import marcoImg from "@/assets/marco-costa.png";
 
 const teamMembers = [
   {
