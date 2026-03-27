@@ -159,7 +159,7 @@ const ProviderComparison = () => {
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body"
                     onClick={() =>
                       document
-                        .getElementById("kontakt")
+                        .getElementById("rechner")
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                   >
