@@ -71,7 +71,7 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden"
             >
-              <div className="aspect-[3/4] bg-muted flex items-center justify-center">
+              <div className="aspect-[3/4] bg-muted flex items-center justify-center overflow-hidden">
                 {member.image ? (
                   <img
                     src={member.image}
