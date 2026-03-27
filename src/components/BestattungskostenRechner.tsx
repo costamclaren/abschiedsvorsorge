@@ -684,7 +684,7 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
               </DialogTitle>
               <DialogDescription className="font-body">
                 Empfohlene Versicherungssumme:{" "}
-                <strong>{totalCost.toLocaleString("de-DE")} €</strong>
+                <strong>{(mode === "slider" ? sliderValue[0] : totalCost).toLocaleString("de-DE")} €</strong>
                 <br />
                 Wir erstellen Ihnen ein unverbindliches Angebot.
               </DialogDescription>
