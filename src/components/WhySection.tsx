@@ -5,7 +5,7 @@ import coupleLakeImg from "@/assets/couple-lake.jpg";
 const reasons = [
 {
   icon: Euro,
-  title: "Die Realität: Bestattungen kosten bis 10.000 €",
+  title: "Die Realität: Bestattungen kosten 10.000 € bis 25.000 €",
   description:
   "Seit 2004 gibt es kein gesetzliches Sterbegeld mehr. Friedhof, Bestatter, Grabpflege – Ihre Angehörigen tragen diese Last allein."
 },
