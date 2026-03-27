@@ -57,7 +57,7 @@ const Team = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -66,12 +66,12 @@ const Team = () => {
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden"
               >
-                <div className="aspect-[4/3] bg-muted flex items-center justify-center">
+                <div className="aspect-[3/4] bg-muted flex items-center justify-center">
                   {member.image ? (
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                     />
                   ) : (
                     <span className="font-heading text-6xl font-bold text-muted-foreground/30">
