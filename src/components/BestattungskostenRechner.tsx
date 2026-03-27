@@ -174,7 +174,11 @@ const steps: Step[] = [
   },
 ];
 
-const BestattungskostenRechner = () => {
+interface BestattungskostenRechnerProps {
+  embedded?: boolean;
+}
+
+const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechnerProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, Option | null>>({});
   const [multiSelections, setMultiSelections] = useState<Record<string, Option[]>>({});
