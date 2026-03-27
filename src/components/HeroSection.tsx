@@ -19,9 +19,6 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center mb-6">
-            <span className="font-heading text-5xl md:text-7xl font-bold text-primary-foreground tracking-tight">MC</span>
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6">
             Weil Liebe auch
             <span className="block text-accent mt-2">über das Leben hinausgeht</span>
