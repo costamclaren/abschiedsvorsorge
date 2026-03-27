@@ -674,6 +674,18 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
           </DialogContent>
         </Dialog>
       </div>
+    </>
+  );
+
+  if (embedded) {
+    return renderCalculator();
+  }
+
+  return (
+    <section id="rechner" className="py-20 md:py-28 bg-background">
+      <div className="max-w-3xl mx-auto px-6">
+        {renderCalculator()}
+      </div>
     </section>
   );
 };
