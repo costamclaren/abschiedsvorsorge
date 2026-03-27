@@ -1,0 +1,110 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Mail, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+
+const teamMembers = [
+  {
+    name: "Max Costa",
+    role: "Geschäftsführer & Versicherungsmakler",
+    email: "costa@costa-mclaren.de",
+    phone: "+49 123 456 789",
+    image: "",
+    description:
+      "Mit über 15 Jahren Erfahrung in der Versicherungsbranche berät Max Costa Familien einfühlsam und kompetent rund um das Thema Bestattungsvorsorge.",
+  },
+  {
+    name: "Sarah McLaren",
+    role: "Senior Beraterin & Partnerin",
+    email: "mclaren@costa-mclaren.de",
+    phone: "+49 123 456 780",
+    image: "",
+    description:
+      "Sarah McLaren verbindet fachliche Expertise mit persönlicher Nähe und begleitet ihre Kunden vom ersten Gespräch bis zum vollständigen Abschluss.",
+  },
+];
+
+const Team = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <section className="pt-28 pb-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+              Ihre Ansprechpartner
+            </h1>
+            <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+              Persönlich, erfahren und immer für Sie da – lernen Sie die
+              Menschen hinter Costa & McLaren kennen.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden"
+              >
+                <div className="aspect-[4/3] bg-muted flex items-center justify-center">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="font-heading text-6xl font-bold text-muted-foreground/30">
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
+                  )}
+                </div>
+                <div className="p-8">
+                  <h2 className="text-2xl font-heading font-bold text-foreground mb-1">
+                    {member.name}
+                  </h2>
+                  <p className="text-sm font-body text-accent font-semibold mb-4">
+                    {member.role}
+                  </p>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
+                    {member.description}
+                  </p>
+                  <div className="flex flex-col gap-3 text-sm font-body">
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      {member.email}
+                    </a>
+                    <a
+                      href={`tel:${member.phone}`}
+                      className="flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                    >
+                      <Phone className="h-4 w-4" />
+                      {member.phone}
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
+};
+
+export default Team;
