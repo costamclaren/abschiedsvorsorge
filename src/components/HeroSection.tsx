@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
 import RechnerDialog from "@/components/RechnerDialog";
+import KontaktDialog from "@/components/KontaktDialog";
 
 
 const HeroSection = () => {
   const [rechnerOpen, setRechnerOpen] = useState(false);
-  const navigate = useNavigate();
+  const [kontaktOpen, setKontaktOpen] = useState(false);
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <img
@@ -45,7 +45,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-body text-lg px-8 py-6"
-              onClick={() => navigate("/team")}
+              onClick={() => setKontaktOpen(true)}
             >
               Kostenlose Beratung
             </Button>
@@ -53,6 +53,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
       <RechnerDialog open={rechnerOpen} onOpenChange={setRechnerOpen} />
+      <KontaktDialog open={kontaktOpen} onOpenChange={setKontaktOpen} />
     </section>
   );
 };
