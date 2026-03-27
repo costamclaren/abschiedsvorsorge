@@ -12,7 +12,7 @@ const Impressum = () => {
           <section className="space-y-2">
             <h2 className="font-heading text-lg font-semibold text-foreground">Angaben gemäß § 5 DDG</h2>
             <p>Marco Costa<br />Poststr. 60<br />41516 Grevenbroich<br />Deutschland</p>
-            <p>Telefon: 02181-68717<br />Internet: abschiedsvorsorge.de</p>
+            <p>Telefon: 02181-68717<br />Internet: <a href="https://www.abschiedsvorsorge.de" target="_blank" rel="noopener noreferrer" className="text-primary underline">www.abschiedsvorsorge.de</a></p>
           </section>
 
           <section className="space-y-2">
