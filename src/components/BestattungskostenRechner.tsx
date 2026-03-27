@@ -275,10 +275,7 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
     setFormData({ vorname: "", nachname: "", email: "", telefon: "", geburtsdatum: "" });
   };
 
-  return (
-    <section id="rechner" className="py-20 md:py-28 bg-background">
-      <div className="max-w-3xl mx-auto px-6">
-  const calculatorContent = (
+  const renderCalculator = () => (
     <>
       {!embedded && (
         <motion.div
