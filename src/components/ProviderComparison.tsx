@@ -277,6 +277,7 @@ const ProviderComparison = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 
