@@ -617,7 +617,7 @@ const BestattungskostenRechner = () => {
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="telefon" className="font-body text-sm">
-                  Telefonnummer
+                  Telefonnummer *
                 </Label>
                 <Input
                   id="telefon"
@@ -627,6 +627,7 @@ const BestattungskostenRechner = () => {
                     setFormData((p) => ({ ...p, telefon: e.target.value }))
                   }
                   placeholder="+49 123 456789"
+                  required
                   maxLength={30}
                 />
               </div>
