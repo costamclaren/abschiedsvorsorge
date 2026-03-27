@@ -51,6 +51,42 @@ const additionalProviders = [
     highlight: "Bekannte deutsche Marke",
   },
   {
+    name: "Signal Iduna",
+    tagline: "Einer der größten deutschen Versicherungskonzerne",
+    features: [
+      "Versicherungssumme 2.500 – 20.000 €",
+      "Ohne Gesundheitsfragen",
+      "Sofortschutz bei Unfalltod",
+      "Überschussbeteiligung möglich",
+      "Flexible Beitragszahlungsdauer",
+    ],
+    highlight: "Starker Rundum-Schutz",
+  },
+  {
+    name: "Allianz",
+    tagline: "Weltweit führender Versicherungskonzern",
+    features: [
+      "Versicherungssumme ab 1.000 €",
+      "Ohne Gesundheitsprüfung",
+      "Sofortschutz bei Unfalltod",
+      "Überschussbeteiligung möglich",
+      "Beitragszahlung flexibel wählbar",
+    ],
+    highlight: "Höchste Finanzkraft",
+  },
+  {
+    name: "Hanse Merkur",
+    tagline: "Traditionsversicherer aus Hamburg seit 1875",
+    features: [
+      "Versicherungssumme 2.000 – 15.000 €",
+      "Ohne Gesundheitsfragen",
+      "Sofortschutz bei Unfalltod",
+      "Überschussbeteiligung möglich",
+      "Flexible Beitragszahlung",
+    ],
+    highlight: "Über 145 Jahre Erfahrung",
+  },
+  {
     name: "Stuttgarter",
     tagline: "Württembergischer Traditionsversicherer seit 1908",
     features: [
@@ -246,7 +282,6 @@ const ProviderComparison = () => {
               "Solidar",
               "Deutsche Familienversicherung",
               "Nürnberger",
-              "Signal Iduna",
               "Volkswohlbund",
               "HDH",
               "Süddeutsche Lebensversicherung",
