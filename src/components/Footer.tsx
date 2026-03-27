@@ -7,9 +7,14 @@ const Footer = () => {
         <p className="font-body text-sm text-background/60">
           © {new Date().getFullYear()} Abschiedsvorsorge. Alle Rechte vorbehalten.
         </p>
-        <Link to="/impressum" className="font-body text-xs text-background/40 mt-3 inline-block hover:text-background/60 transition-colors underline">
-          Impressum
-        </Link>
+        <div className="flex items-center justify-center gap-4 mt-3">
+          <Link to="/impressum" className="font-body text-xs text-background/40 hover:text-background/60 transition-colors underline">
+            Impressum
+          </Link>
+          <Link to="/datenschutz" className="font-body text-xs text-background/40 hover:text-background/60 transition-colors underline">
+            Datenschutz
+          </Link>
+        </div>
       </div>
     </footer>
   );
