@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import ioannisImg from "@/assets/ioannis-laloussis.jpg";
 
 const teamMembers = [
   {
@@ -21,6 +22,15 @@ const teamMembers = [
     image: "",
     description:
       "Sarah McLaren verbindet fachliche Expertise mit persönlicher Nähe und begleitet ihre Kunden vom ersten Gespräch bis zum vollständigen Abschluss.",
+  },
+  {
+    name: "Ioannis Laloussis",
+    role: "Berater Bestattungsvorsorge",
+    email: "bestattungsvorsorge@costa-mclaren.de",
+    phone: "0176 48075401",
+    image: ioannisImg,
+    description:
+      "Ioannis Laloussis berät Sie persönlich und einfühlsam zu allen Fragen rund um die Bestattungsvorsorge – kompetent und vertrauensvoll.",
   },
 ];
 
