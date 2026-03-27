@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/10">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-base font-bold text-primary-foreground tracking-tight">Costa & McLaren</span>
+          <span className="font-heading text-base font-bold text-primary-foreground tracking-tight">Bestattungsvorsorge</span>
         </Link>
         <div className="hidden md:flex items-center gap-8 font-body text-sm text-primary-foreground/80">
           {isHome ? (

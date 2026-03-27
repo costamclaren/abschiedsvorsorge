@@ -41,7 +41,7 @@ const Team = () => {
             </h1>
             <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
               Persönlich, erfahren und immer für Sie da – lernen Sie die
-              Menschen hinter Costa & McLaren kennen.
+              Menschen hinter unserer Bestattungsvorsorge kennen.
             </p>
           </motion.div>
 
