@@ -13,6 +13,7 @@ export const teamMembers = [
     email: "bestattungsvorsorge@costa-mclaren.de",
     phone: "0176 70806065",
     image: marcoImg,
+    imageClass: "scale-150 origin-top",
     description:
       "Marco hilft Ihnen, die richtige Absicherung für Ihre Familie zu finden – praxisnah, ehrlich und auf Augenhöhe.",
   },
@@ -75,7 +76,7 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top"
+                    className={`w-full h-full object-cover object-top ${(member as any).imageClass || ""}`}
                   />
                 ) : (
                   <span className="font-heading text-6xl font-bold text-muted-foreground/30">
