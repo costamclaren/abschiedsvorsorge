@@ -163,11 +163,7 @@ const ProviderComparison = () => {
                   </ul>
                   <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body"
-                    onClick={() =>
-                      document
-                        .getElementById("rechner")
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }
+                    onClick={() => setRechnerOpen(true)}
                   >
                     Jetzt beraten lassen
                   </Button>
