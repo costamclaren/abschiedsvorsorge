@@ -86,42 +86,6 @@ const additionalProviders = [
     ],
     highlight: "Über 145 Jahre Erfahrung",
   },
-  {
-    name: "Stuttgarter",
-    tagline: "Württembergischer Traditionsversicherer seit 1908",
-    features: [
-      "Versicherungssumme 2.500 – 20.000 €",
-      "Ohne Gesundheitsfragen",
-      "Sofortschutz bei Unfalltod",
-      "Überschussbeteiligung möglich",
-      "Beitragszahlung bis Alter 85 wählbar",
-    ],
-    highlight: "Solide Finanzstärke",
-  },
-  {
-    name: "Ideal Versicherung",
-    tagline: "Berliner Traditionsversicherer seit 1912",
-    features: [
-      "Versicherungssumme 2.500 – 15.000 €",
-      "Ohne Gesundheitsfragen",
-      "Wartezeit 3 Jahre",
-      "Sofortschutz bei Unfalltod",
-      "Flexible Beitragszahlung",
-    ],
-    highlight: "Über 100 Jahre Erfahrung",
-  },
-  {
-    name: "LV 1871",
-    tagline: "Münchner Versicherungsverein auf Gegenseitigkeit",
-    features: [
-      "Versicherungssumme 2.000 – 25.000 €",
-      "Ohne Gesundheitsprüfung",
-      "Sofortleistung bei Unfalltod",
-      "Überschussbeteiligung möglich",
-      "Beitragszahlungsdauer wählbar",
-    ],
-    highlight: "Starke Überschussbeteiligung",
-  },
 ];
 
 const ProviderComparison = () => {
@@ -279,6 +243,9 @@ const ProviderComparison = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
             {[
+              "Stuttgarter",
+              "Ideal Versicherung",
+              "LV 1871",
               "Solidar",
               "Deutsche Familienversicherung",
               "Nürnberger",
