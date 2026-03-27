@@ -186,7 +186,7 @@ const ProviderComparison = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background rounded-lg shadow-card overflow-hidden"
+                className="bg-background rounded-lg shadow-card overflow-hidden flex flex-col h-full"
               >
                 <div className="bg-primary/80 p-4">
                   <h4 className="text-lg font-heading font-bold text-primary-foreground">
@@ -196,14 +196,14 @@ const ProviderComparison = () => {
                     {provider.tagline}
                   </p>
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex flex-col flex-1">
                   <div className="flex items-center gap-2 mb-3 bg-accent/10 rounded-md px-3 py-1.5">
                     <Star className="w-3 h-3 text-accent flex-shrink-0" />
                     <span className="text-xs font-body font-semibold text-foreground">
                       {provider.highlight}
                     </span>
                   </div>
-                  <ul className="space-y-2 mb-5">
+                  <ul className="space-y-2 mb-5 flex-1">
                     {provider.features.map((feature) => (
                       <li
                         key={feature}
