@@ -180,6 +180,8 @@ interface BestattungskostenRechnerProps {
 }
 
 const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechnerProps) => {
+  const [mode, setMode] = useState<"detail" | "slider">("detail");
+  const [sliderValue, setSliderValue] = useState([7500]);
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, Option | null>>({});
   const [multiSelections, setMultiSelections] = useState<Record<string, Option[]>>({});
