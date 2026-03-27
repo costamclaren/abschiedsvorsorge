@@ -11,10 +11,10 @@ const teamMembers = [
     name: "Marco Costa",
     role: "Berater Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "0176-70806065",
+    phone: "0176 70806065",
     image: marcoImg,
     description:
-      "Marco Costa berät Sie persönlich und kompetent zu allen Fragen der Bestattungsvorsorge – vertrauensvoll und mit dem Blick fürs Wesentliche.",
+      "Als Versicherungsmakler mit Fokus auf Bestattungsvorsorge hilft Marco Costa Ihnen, die richtige Absicherung für Ihre Familie zu finden – praxisnah, ehrlich und auf Augenhöhe.",
   },
   {
     name: "Ioannis Laloussis",
@@ -23,16 +23,16 @@ const teamMembers = [
     phone: "0176 48075401",
     image: ioannisImg,
     description:
-      "Ioannis Laloussis berät Sie persönlich und einfühlsam zu allen Fragen rund um die Bestattungsvorsorge – kompetent und vertrauensvoll.",
+      "Ioannis Laloussis nimmt sich Zeit für Ihre Fragen und findet gemeinsam mit Ihnen eine Lösung, die zu Ihrer Lebenssituation passt – diskret, verlässlich und mit viel Einfühlungsvermögen.",
   },
   {
     name: "Laura Zabel",
     role: "Beraterin Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "02181-68717",
+    phone: "02181 68717",
     image: lauraImg,
     description:
-      "Laura Zabel steht Ihnen mit Empathie und Fachkompetenz zur Seite und begleitet Sie einfühlsam bei der Planung Ihrer Bestattungsvorsorge.",
+      "Laura Zabel begleitet Sie Schritt für Schritt durch den Prozess der Vorsorgeplanung und sorgt dafür, dass keine Frage offenbleibt – herzlich, strukturiert und immer erreichbar.",
   },
 ];
 
