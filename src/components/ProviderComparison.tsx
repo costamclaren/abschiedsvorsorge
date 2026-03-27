@@ -188,7 +188,7 @@ const ProviderComparison = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-background rounded-lg shadow-card overflow-hidden flex flex-col h-full"
               >
-                <div className="bg-primary/80 p-4">
+                <div className="bg-primary/80 p-4 min-h-[5.5rem] flex flex-col justify-center">
                   <h4 className="text-lg font-heading font-bold text-primary-foreground">
                     {provider.name}
                   </h4>
