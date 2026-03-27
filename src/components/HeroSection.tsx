@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import handsImg from "@/assets/hands.jpg";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import RechnerDialog from "@/components/RechnerDialog";
 
 const HeroSection = () => {
   const [rechnerOpen, setRechnerOpen] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <img
@@ -44,11 +45,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 font-body text-lg px-8 py-6"
-              onClick={() =>
-                document
-                  .getElementById("kontakt")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => navigate("/team")}
             >
               Kostenlose Beratung
             </Button>
