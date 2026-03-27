@@ -523,7 +523,7 @@ const BestattungskostenRechner = () => {
                     className="font-body h-12 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     asChild
                   >
-                    <a href="tel:+4900000000">
+                    <a href="tel:+492181-68717">
                       <Phone className="w-4 h-4 mr-2" />
                       Jetzt anrufen
                     </a>
@@ -656,10 +656,10 @@ const BestattungskostenRechner = () => {
                 <p className="text-center text-muted-foreground text-xs font-body">
                   Oder rufen Sie uns direkt an:{" "}
                   <a
-                    href="tel:+4900000000"
+                    href="tel:+492181-68717"
                     className="text-primary font-semibold hover:underline"
                   >
-                    +49 (0) 000 000 000
+                    02181-68717
                   </a>
                 </p>
               </div>
