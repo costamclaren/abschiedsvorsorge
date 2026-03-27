@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-foreground py-10 px-6">
@@ -10,6 +12,9 @@ const Footer = () => {
           Vermittlung von Sterbegeldversicherungen der Hannoversche
           Lebensversicherung AG und DELA Lebensversicherungen N.V.
         </p>
+        <Link to="/impressum" className="font-body text-xs text-background/40 mt-3 inline-block hover:text-background/60 transition-colors underline">
+          Impressum
+        </Link>
       </div>
     </footer>
   );
