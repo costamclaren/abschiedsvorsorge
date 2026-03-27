@@ -17,15 +17,6 @@ const teamMembers = [
       "Marco hilft Ihnen, die richtige Absicherung für Ihre Familie zu finden – praxisnah, ehrlich und auf Augenhöhe.",
   },
   {
-    name: "Ioannis Laloussis",
-    role: "Berater Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "0176 48075401",
-    image: ioannisImg,
-    description:
-      "Ioannis nimmt sich Zeit für Ihre Fragen und findet eine Lösung, die zu Ihnen passt – diskret und verlässlich.",
-  },
-  {
     name: "Laura Zabel",
     role: "Beraterin Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
@@ -33,6 +24,15 @@ const teamMembers = [
     image: lauraImg,
     description:
       "Laura begleitet Sie durch die Vorsorgeplanung und sorgt dafür, dass keine Frage offenbleibt – herzlich und erreichbar.",
+  },
+  {
+    name: "Ioannis Laloussis",
+    role: "Berater Bestattungsvorsorge",
+    email: "bestattungsvorsorge@costa-mclaren.de",
+    phone: "0176 48075401",
+    image: ioannisImg,
+    description:
+      "Ioannis nimmt sich Zeit für Ihre Fragen und findet eine Lösung, die zu Ihnen passt – diskret und verlässlich.",
   },
 ];
 
