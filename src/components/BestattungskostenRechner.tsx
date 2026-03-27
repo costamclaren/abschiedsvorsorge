@@ -673,7 +673,6 @@ const BestattungskostenRechner = ({ embedded = false }: BestattungskostenRechner
             </form>
           </DialogContent>
         </Dialog>
-      </div>
     </>
   );
 
