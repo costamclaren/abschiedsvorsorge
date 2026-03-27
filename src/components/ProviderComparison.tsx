@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Star, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import RechnerDialog from "@/components/RechnerDialog";
 
 const featuredProviders = [
   {
