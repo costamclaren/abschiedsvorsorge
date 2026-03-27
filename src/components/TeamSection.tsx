@@ -117,19 +117,6 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
           ))}
         </div>
 
-        {showLink && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center mt-10"
-          >
-            <Button variant="outline" className="font-body border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-              <Link to="/team">Mehr über unser Team erfahren</Link>
-            </Button>
-          </motion.div>
-        )}
       </div>
     </section>
   );
