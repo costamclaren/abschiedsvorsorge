@@ -39,7 +39,7 @@ export const teamMembers = [
     name: "Pier Lio",
     role: "Berater Bestattungsvorsorge",
     email: "bestattungsvorsorge@costa-mclaren.de",
-    phone: "+49 151 18613739",
+    phone: "0151 18613739",
     image: "",
     description:
       "Pier Lio steht Ihnen mit Engagement und Einfühlungsvermögen zur Seite – kompetent und zuverlässig.",
