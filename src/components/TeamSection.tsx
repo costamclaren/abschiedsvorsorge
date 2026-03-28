@@ -96,8 +96,8 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
                   </span>
                 )}
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-1">
+              <div className="p-8 flex flex-col">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-1 min-h-[4rem] flex items-end">
                   {member.name}
                 </h3>
                 <p className="text-sm font-body text-accent font-semibold mb-4">
