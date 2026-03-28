@@ -373,7 +373,7 @@ const RechnerLink = () => {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md">
             <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-6" />
             <h2 className="text-2xl font-heading font-bold text-foreground mb-3">
-              Vielen Dank, {vorname}!
+              Vielen Dank, {vorname} {nachname}!
             </h2>
             <p className="text-muted-foreground font-body mb-8">
               Ihre Berechnung wurde erfolgreich übermittelt. Wir melden uns in Kürze bei Ihnen.
