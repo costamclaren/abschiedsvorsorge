@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
 
       {/* Marquee banner */}
       <div className="relative">
-        <div className="flex animate-marquee gap-8 w-max">
+        <div className="flex animate-marquee gap-8 w-max hover:[animation-play-state:paused]">
           {[...testimonials, ...testimonials].map((t, index) => (
             <TestimonialCard key={`${t.name}-${index}`} t={t} />
           ))}
