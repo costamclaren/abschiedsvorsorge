@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import ioannisImg from "@/assets/ioannis-laloussis.jpg";
 import lauraImg from "@/assets/laura-zabel.jpg";
 import marcoImg from "@/assets/marco-costa.png";
+import pierImg from "@/assets/pier-lio.png";
 
 export const teamMembers = [
   {
