@@ -13,7 +13,7 @@ const testimonials = [
     name: "Thomas B.",
     age: 54,
     location: "Neuss",
-    text: "Herr Costa hat mir alles ganz unkompliziert erklärt – kein Fachchinesisch, sondern klare Worte. Innerhalb einer Stunde war alles geregelt. So stelle ich mir gute Beratung vor.",
+    text: "Das Team hat mir alles ganz unkompliziert erklärt – kein Fachchinesisch, sondern klare Worte. Innerhalb einer Stunde war alles geregelt. So stelle ich mir gute Beratung vor.",
     stars: 5,
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
     name: "Michael D.",
     age: 52,
     location: "Grevenbroich",
-    text: "Ich wollte meine Familie absichern, bevor es zu spät ist. Herr Costa hat mich ehrlich beraten – ohne Druck, ohne versteckte Kosten. Absolute Empfehlung!",
+    text: "Ich wollte meine Familie absichern, bevor es zu spät ist. Das ganze Team hat mich ehrlich beraten – ohne Druck, ohne versteckte Kosten. Absolute Empfehlung!",
     stars: 5,
   },
   {
