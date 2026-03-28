@@ -67,10 +67,10 @@ const ContactSection = () => {
                   E-Mail
                 </span>
                 <a
-                  href="mailto:bestattungsvorsorge@costa-mclaren.de"
+                  href="mailto:abschiedsvorsorge@costa-mclaren.de"
                   className="text-primary-foreground/80 font-body text-sm hover:text-accent transition-colors"
                 >
-                  bestattungsvorsorge@costa-mclaren.de
+                  abschiedsvorsorge@costa-mclaren.de
                 </a>
               </div>
               <div className="flex flex-col items-center gap-3">

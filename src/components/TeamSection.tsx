@@ -11,7 +11,7 @@ export const teamMembers = [
   {
     name: "Marco Costa",
     role: "Berater Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
+    email: "abschiedsvorsorge@costa-mclaren.de",
     phone: "0176 70806065",
     image: marcoImg,
     imageClass: "scale-[1.35] translate-y-[2%]",
@@ -21,7 +21,7 @@ export const teamMembers = [
   {
     name: "Laura Zabel",
     role: "Beraterin Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
+    email: "abschiedsvorsorge@costa-mclaren.de",
     phone: "02181 68717",
     image: lauraImg,
     description:
@@ -30,7 +30,7 @@ export const teamMembers = [
   {
     name: "Ioannis Laloussis",
     role: "Berater Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
+    email: "abschiedsvorsorge@costa-mclaren.de",
     phone: "0176 48075401",
     image: ioannisImg,
     description:
@@ -39,7 +39,7 @@ export const teamMembers = [
   {
     name: "Pier Lio",
     role: "Berater Bestattungsvorsorge",
-    email: "bestattungsvorsorge@costa-mclaren.de",
+    email: "abschiedsvorsorge@costa-mclaren.de",
     phone: "0151 18613739",
     image: pierImg,
     imageClass: "scale-[1.15] -translate-x-[8%]",
