@@ -251,7 +251,7 @@ const RechnerLink = () => {
                   </h1>
                 </div>
                 <p className="text-muted-foreground font-body text-sm mb-8">
-                  Bitte tragen Sie Ihren Namen ein, um den Rechner zu starten.
+                  Bitte tragen Sie Ihren Namen ein, damit wir Ihr Ergebnis zuordnen können.
                 </p>
                 <form
                   onSubmit={(e) => {
