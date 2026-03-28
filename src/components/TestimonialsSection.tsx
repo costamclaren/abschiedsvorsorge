@@ -41,7 +41,7 @@ const testimonials = [
     name: "Michael D.",
     age: 52,
     location: "Grevenbroich",
-    text: "Ich wollte meine Familie absichern, bevor es zu spät ist. Das ganze Team hat mich ehrlich beraten – ohne Druck, ohne versteckte Kosten. Absolute Empfehlung!",
+    text: "Meine Schwester und ich haben uns gemeinsam beraten lassen. Das Team war so warmherzig und hat sich um alles gekümmert – wir mussten uns um nichts mehr sorgen.",
     stars: 5,
   },
   {
