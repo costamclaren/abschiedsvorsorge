@@ -13,7 +13,7 @@ const testimonials = [
     name: "Thomas B.",
     age: 54,
     location: "Neuss",
-    text: "Das Team hat mir alles ganz unkompliziert erklärt – kein Fachchinesisch, sondern klare Worte. Innerhalb einer Stunde war alles geregelt. So stelle ich mir gute Beratung vor.",
+    text: "Herr Costa hat sich viel Zeit für mein Anliegen genommen und mir einen Tarif empfohlen, der perfekt zu meinem Budget passt. Sehr professionell und menschlich zugleich.",
     stars: 5,
   },
   {
@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
 
       {/* Marquee banner */}
       <div className="relative">
-        <div className="flex animate-marquee gap-8 w-max">
+        <div className="flex animate-marquee gap-8 w-max hover:[animation-play-state:paused]">
           {[...testimonials, ...testimonials].map((t, index) => (
             <TestimonialCard key={`${t.name}-${index}`} t={t} />
           ))}
