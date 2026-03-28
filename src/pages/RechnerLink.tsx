@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { teamMembers } from "@/components/TeamSection";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calculator,
@@ -9,6 +10,8 @@ import {
   ListChecks,
   CheckCircle2,
   Loader2,
+  Mail,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -234,62 +237,122 @@ const RechnerLink = () => {
             </Link>
           </div>
         </nav>
-        <div className="pt-16 flex items-center justify-center min-h-screen px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="w-full max-w-md"
-          >
-            <div className="bg-card rounded-lg shadow-elevated p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Calculator className="w-6 h-6 text-primary" />
-                <h1 className="text-2xl font-heading font-bold text-foreground">
-                  Bestattungskosten-Rechner
-                </h1>
+        <div className="pt-24 pb-16 px-6">
+          <div className="max-w-md mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="bg-card rounded-lg shadow-elevated p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Calculator className="w-6 h-6 text-primary" />
+                  <h1 className="text-2xl font-heading font-bold text-foreground">
+                    Bestattungskosten-Rechner
+                  </h1>
+                </div>
+                <p className="text-muted-foreground font-body text-sm mb-8">
+                  Bitte tragen Sie Ihren Namen ein, um den Rechner zu starten.
+                </p>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!vorname.trim() || !nachname.trim()) {
+                      toast({ title: "Bitte füllen Sie beide Felder aus.", variant: "destructive" });
+                      return;
+                    }
+                    setNameSubmitted(true);
+                  }}
+                  className="space-y-4"
+                >
+                  <div className="space-y-1.5">
+                    <Label htmlFor="rl-vorname" className="font-body text-sm">Vorname</Label>
+                    <Input
+                      id="rl-vorname"
+                      value={vorname}
+                      onChange={(e) => setVorname(e.target.value)}
+                      placeholder="Max"
+                      maxLength={100}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="rl-nachname" className="font-body text-sm">Nachname</Label>
+                    <Input
+                      id="rl-nachname"
+                      value={nachname}
+                      onChange={(e) => setNachname(e.target.value)}
+                      placeholder="Mustermann"
+                      maxLength={100}
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-primary text-primary-foreground font-body h-11 mt-2">
+                    Rechner starten
+                    <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </form>
               </div>
-              <p className="text-muted-foreground font-body text-sm mb-8">
-                Bitte tragen Sie Ihren Namen ein, um den Rechner zu starten.
+            </motion.div>
+          </div>
+
+          {/* Ansprechpartner */}
+          <div className="max-w-5xl mx-auto mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-3">
+                Ihre Ansprechpartner
+              </h2>
+              <p className="text-muted-foreground font-body text-center mb-10 max-w-xl mx-auto">
+                Bei Fragen stehen wir Ihnen jederzeit persönlich zur Verfügung.
               </p>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  if (!vorname.trim() || !nachname.trim()) {
-                    toast({ title: "Bitte füllen Sie beide Felder aus.", variant: "destructive" });
-                    return;
-                  }
-                  setNameSubmitted(true);
-                }}
-                className="space-y-4"
-              >
-                <div className="space-y-1.5">
-                  <Label htmlFor="rl-vorname" className="font-body text-sm">Vorname</Label>
-                  <Input
-                    id="rl-vorname"
-                    value={vorname}
-                    onChange={(e) => setVorname(e.target.value)}
-                    placeholder="Max"
-                    maxLength={100}
-                    required
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="rl-nachname" className="font-body text-sm">Nachname</Label>
-                  <Input
-                    id="rl-nachname"
-                    value={nachname}
-                    onChange={(e) => setNachname(e.target.value)}
-                    placeholder="Mustermann"
-                    maxLength={100}
-                    required
-                  />
-                </div>
-                <Button type="submit" className="w-full bg-primary text-primary-foreground font-body h-11 mt-2">
-                  Rechner starten
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
-              </form>
-            </div>
-          </motion.div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {teamMembers.map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="bg-card rounded-xl border border-border shadow-sm overflow-hidden"
+                  >
+                    <div className="aspect-[3/4] bg-muted overflow-hidden">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className={`w-full h-full object-cover object-top ${(member as any).imageClass || ""}`}
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-lg font-heading font-bold text-foreground mb-0.5">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs font-body text-accent font-semibold mb-3">
+                        {member.role}
+                      </p>
+                      <div className="flex flex-col gap-2 text-xs font-body">
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="flex items-center gap-1.5 text-foreground hover:text-accent transition-colors"
+                        >
+                          <Mail className="h-3.5 w-3.5 flex-shrink-0" />
+                          <span className="truncate">{member.email}</span>
+                        </a>
+                        <a
+                          href={`tel:${member.phone}`}
+                          className="flex items-center gap-1.5 text-foreground hover:text-accent transition-colors"
+                        >
+                          <Phone className="h-3.5 w-3.5 flex-shrink-0" />
+                          {member.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     );
