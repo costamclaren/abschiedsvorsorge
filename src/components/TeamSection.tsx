@@ -35,6 +35,15 @@ export const teamMembers = [
     description:
       "Ioannis nimmt sich Zeit für Ihre Fragen und findet eine Lösung, die zu Ihnen passt – diskret und verlässlich.",
   },
+  {
+    name: "Pier Lio",
+    role: "Berater Bestattungsvorsorge",
+    email: "bestattungsvorsorge@costa-mclaren.de",
+    phone: "+49 151 18613739",
+    image: "",
+    description:
+      "Pier Lio steht Ihnen mit Engagement und Einfühlungsvermögen zur Seite – kompetent und zuverlässig.",
+  },
 ];
 
 interface TeamSectionProps {
@@ -61,7 +70,7 @@ const TeamSection = ({ showLink = true }: TeamSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
