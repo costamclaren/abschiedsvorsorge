@@ -10,6 +10,8 @@ import {
   ListChecks,
   CheckCircle2,
   Loader2,
+  Mail,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
