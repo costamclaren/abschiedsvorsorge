@@ -1115,7 +1115,7 @@ function buildTarifCards() {
               <span class="tarif-ab">ab</span>
               <span class="tarif-price">${tarif.price.toFixed(2).replace('.',',')} €</span>
             </div>
-            <span class="tarif-price-unit">/Mtl.nat</span>
+            <span class="tarif-price-unit">/mtl.nat</span>
           </div>
         </div>
         <div class="tarif-features">${featureHTML}</div>
@@ -1138,7 +1138,7 @@ function selectTarif(id, name, vs, price) {
       <div class="label">Gewählter Tarif</div>
       <div class="value">${name} · ${vs}</div>
     </div>
-    <div class="price">${price.toFixed(2).replace('.',',')} €/Mtl.</div>
+    <div class="price">${price.toFixed(2).replace('.',',')} €/mtl.</div>
   `;
 
   showStep(4);
