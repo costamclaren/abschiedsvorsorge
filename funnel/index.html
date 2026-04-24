@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abschiedsvorsorge – Jetzt Beitrag berechnen</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243260;
+    --green: #27ae60;
+    --green-dark: #1e8449;
+    --gold: #c9a84c;
+    --white: #ffffff;
+    --off-white: #f8f6f2;
+    --text: #2c3e50;
+    --text-muted: #7f8c8d;
+    --border: #e0ddd8;
+    --shadow: 0 4px 24px rgba(26,39,68,0.10);
+    --shadow-lg: 0 12px 48px rgba(26,39,68,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { height: 100%; }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--navy);
+    padding: 18px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .logo {
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .logo span { color: var(--white); }
+  .trust-badge {
+    position: absolute;
+    right: 24px;
+    background: rgba(39,174,96,0.15);
+    border: 1px solid rgba(39,174,96,0.4);
+    color: #5dbd85;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 48px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 440px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    padding: 8px 18px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+  .stat-pill strong { color: var(--white); }
+
+  /* ─── PAGE BODY ─── */
+  .page-body {
+    flex: 1;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    overflow: hidden;
+  }
+
+  /* ─── MAIN CARD ─── */
+  .main-card {
+    max-width: 560px;
+    width: 100%;
+    margin: 0;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 96px);
+    position: relative;
+    z-index: 10;
+  }
+
+  /* ─── CARD HERO ─── */
+  .card-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 14px 28px 12px;
+    text-align: center;
+  }
+  .card-hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+  }
+  .card-hero h2 {
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    font-size: clamp(16px, 4vw, 19px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .card-hero-checks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+  .card-hero-checks span {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ─── STEP INDICATOR ─── */
+  .step-indicator {
+    display: flex;
+    padding: 12px 28px 0;
+    gap: 8px;
+    align-items: center;
+  }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.3s;
+  }
+  .step-dot.active { background: var(--green); width: 24px; border-radius: 4px; }
+  .step-dot.done { background: var(--green); }
+  .step-label {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* ─── STEP PANELS ─── */
+  .step {
+    display: none;
+    padding: 16px 28px 20px;
+    animation: fadeIn 0.35s ease;
+  }
+  .step.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-title {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  /* ─── GENDER SELECTOR ─── */
+  .gender-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .gender-btn {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    background: var(--off-white);
+    font-family: Arial, sans-serif;
+  }
+  .gender-btn:hover { border-color: var(--navy); background: #f0f2f8; }
+  .gender-btn.selected {
+    border-color: var(--navy);
+    background: #eef0f8;
+  }
+  .gender-btn .icon { font-size: 22px; display: block; margin-bottom: 4px; }
+  .gender-btn .label { font-size: 15px; font-weight: 600; color: var(--navy); }
+
+  /* ─── DATE INPUT ─── */
+  .date-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 360px;
+    margin: 0 auto 8px;
+  }
+  .input-group { display: flex; flex-direction: column; gap: 6px; }
+  .input-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  .input-group input, .input-group select {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: var(--navy);
+    font-weight: 600;
+    background: var(--off-white);
+    transition: border-color 0.2s;
+    width: 100%;
+    text-align: center;
+    -webkit-appearance: none;
+  }
+  .input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--navy);
+    background: var(--white);
+  }
+  .age-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    min-height: 18px;
+    text-align: center;
+  }
+  .age-hint.valid { color: var(--green); font-weight: 500; }
+  .age-hint.error { color: #e74c3c; }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: 0.2px;
+    outline: none;
+    text-decoration: none;
+  }
+  .btn-primary:focus { outline: none; }
+  .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(39,174,96,0.35); }
+  .btn-primary:disabled { background: #b2bec3; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+  }
+  .btn-back:hover { color: var(--navy); }
+
+  /* ─── LOADER ─── */
+  .loader-wrap {
+    text-align: center;
+    padding: 20px 0 8px;
+  }
+  .loader-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .loader-dots span {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--navy);
+    animation: bounce 1.2s infinite;
+  }
+  .loader-dots span:nth-child(2) { animation-delay: 0.2s; background: var(--gold); }
+  .loader-dots span:nth-child(3) { animation-delay: 0.4s; background: var(--green); }
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-10px); opacity: 1; }
+  }
+  .loader-text { color: var(--text-muted); font-size: 15px; }
+  .loader-text strong { color: var(--navy); }
+
+  /* ─── TARIF CARDS ─── */
+  .tarif-intro {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding: 8px 12px;
+    background: var(--off-white);
+    border-radius: 8px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .tarif-intro strong { color: var(--navy); }
+
+  .tarif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tarif-card {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    background: var(--white);
+    text-align: center;
+  }
+  .tarif-card:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .tarif-card.recommended {
+    border-color: var(--green);
+    background: linear-gradient(135deg, #f0faf4 0%, #ffffff 100%);
+  }
+  .recommended-badge {
+    position: absolute;
+    top: -10px; left: 50%; transform: translateX(-50%);
+    background: var(--green);
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .tarif-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    margin-top: 4px;
+  }
+  .tarif-mid-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .tarif-vs-block { text-align: left; }
+  .tarif-vs-amount {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  .tarif-vs-label {
+    font-size: 8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .tarif-price-block { text-align: right; }
+  .tarif-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 2px;
+  }
+  .tarif-ab { font-size: 9px; color: var(--text-muted); }
+  .tarif-price { font-size: 17px; font-weight: 700; color: var(--navy); font-family: Arial, sans-serif; }
+  .tarif-price-unit { font-size: 9px; color: var(--text-muted); display: block; }
+  .tarif-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 4px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .tarif-feature {
+    font-size: 10px;
+    color: var(--green);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .tarif-select-btn {
+    width: 100%;
+    padding: 8px 4px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    background: var(--off-white);
+    color: var(--navy);
+    transition: all 0.2s;
+  }
+  .tarif-card.recommended .tarif-select-btn {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+  }
+  .tarif-card:hover .tarif-select-btn,
+  .tarif-select-btn:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+  }
+
+  /* ─── CONTACT FORM ─── */
+  .selected-tarif-bar {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .selected-tarif-bar .label { color: rgba(255,255,255,0.7); font-size: 12px; }
+  .selected-tarif-bar .value { color: var(--white); font-size: 15px; font-weight: 700; }
+  .selected-tarif-bar .price { color: var(--white); font-size: 18px; font-weight: 700; font-family: Arial, sans-serif; }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .form-grid.full { grid-template-columns: 1fr; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .form-field input, .form-field select {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 14px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    color: var(--navy);
+    background: var(--off-white);
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-field input:focus, .form-field select:focus {
+    outline: none;
+    border-color: var(--green);
+    background: var(--white);
+  }
+
+  .consent-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: var(--off-white);
+    border-radius: 8px;
+  }
+
+  /* ─── OTP ─── */
+  .otp-info {
+    text-align: center;
+    padding: 8px 0 20px;
+  }
+  .otp-icon { font-size: 48px; margin-bottom: 12px; }
+  .otp-info h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .otp-info p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+  .otp-phone { font-weight: 700; color: var(--navy); }
+  .otp-input-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 24px 0;
+  }
+  .otp-digit {
+    width: 50px; height: 58px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: var(--navy);
+    background: var(--off-white);
+    transition: border-color 0.2s;
+  }
+  .otp-digit:focus { outline: none; border-color: var(--green); background: var(--white); }
+  .otp-resend {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .otp-resend button {
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    text-decoration: underline;
+  }
+
+  /* ─── SUCCESS ─── */
+  .success-wrap {
+    text-align: center;
+    padding: 8px 0 16px;
+  }
+  .success-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--green) 0%, #2ecc71 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(39,174,96,0.3);
+  }
+  .success-wrap h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .success-wrap p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .success-steps {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    text-align: left;
+  }
+  .success-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--text);
+    text-align: center;
+  }
+  .success-step div:last-child { text-align: center; }
+  .success-step:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .success-step-num {
+    width: 24px; height: 24px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── TRUST FOOTER ─── */
+  .trust-footer {
+    padding: 16px 28px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ─── BOTTOM INFO ─── */
+  .bottom-info {
+    max-width: 560px;
+    margin: 24px auto 0;
+    padding: 0 16px 40px;
+  }
+  .bottom-info p {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 600px) {
+    .page-body { padding: 12px; align-items: flex-start; padding-top: 16px; }
+    .main-card { border-radius: 16px; max-height: calc(100vh - 80px); }
+    .step { padding: 22px 20px 26px; }
+    .trust-badge { display: none; }
+    .date-row { max-width: 100%; }
+    .tarif-grid { grid-template-columns: 1fr; }
+    .tarif-vs-amount { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Abschiedsvorsorge</div>
+</header>
+
+<div class="page-body">
+<div class="main-card">
+
+  <div class="card-hero">
+    <h2>Was würde deine Beerdigung wirklich kosten?</h2>
+    <div class="card-hero-checks">
+      <span>✓ Kostenlos</span>
+      <span>✓ Ohne Gesundheitsprüfung</span>
+    </div>
+    <div class="card-hero-pill">⚡ In 60 Sekunden zum persönlichen Angebot</div>
+  </div>
+
+  <div class="step-indicator" id="stepIndicator">
+    <div class="step-dot active" id="dot1"></div>
+    <div class="step-dot" id="dot2"></div>
+    <div class="step-dot" id="dot3"></div>
+    <div class="step-dot" id="dot4"></div>
+    <span class="step-label" id="stepLabel">Schritt 1 von 4</span>
+  </div>
+
+  <!-- STEP 1: Geschlecht + Geburtsdatum -->
+  <div class="step active" id="step1">
+    <div class="step-title" style="text-align:center">Deine persönlichen Daten</div>
+    <p class="step-desc" style="text-align:center">Damit wir deinen genauen Beitrag berechnen können.</p>
+
+    <div style="margin-bottom:20px">
+      <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px">Anrede</div>
+      <div class="gender-grid">
+        <div class="gender-btn" id="btn-herr" onclick="selectGender('Herr')">
+          <span class="icon">👨</span>
+          <span class="label">Herr</span>
+        </div>
+        <div class="gender-btn" id="btn-frau" onclick="selectGender('Frau')">
+          <span class="icon">👩</span>
+          <span class="label">Frau</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;text-align:center">Geburtsdatum</div>
+    <div class="date-row">
+      <div class="input-group">
+        <label>Tag</label>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" id="bday" maxlength="2" placeholder="TT" oninput="dayInput(this)">
+      </div>
+      <div class="input-group">
+        <label>Monat</label>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" id="bmonth" maxlength="2" placeholder="MM" oninput="monthInput(this)">
+      </div>
+      <div class="input-group">
+        <label>Jahr</label>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" id="byear" maxlength="4" placeholder="JJJJ" oninput="validateDate()">
+      </div>
+    </div>
+    <div class="age-hint" id="ageHint">Bitte vollständiges Geburtsdatum eingeben</div>
+
+    <button class="btn-primary" id="btnStep1" onclick="goToLoader()" disabled>
+      Meine Tarife berechnen →
+    </button>
+  </div>
+
+  <!-- STEP 2: Loader -->
+  <div class="step" id="step2">
+    <div class="loader-wrap">
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="loader-text" id="loaderText">Wir suchen die <strong>besten Tarife</strong> für dein Alter…</p>
+    </div>
+  </div>
+
+  <!-- STEP 3: Tarifsauswahl -->
+  <div class="step" id="step3">
+    <div class="step-title">Deine persönlichen Tarife</div>
+    <div class="tarif-intro" id="tarifIntro">Berechnet für <strong id="namePreview"></strong></div>
+
+    <div class="tarif-grid" id="tarifGrid"></div>
+
+    <button class="btn-back" onclick="goBack(1)">← Zurück</button>
+  </div>
+
+  <!-- STEP 4: Kontaktdaten -->
+  <div class="step" id="step4">
+    <div class="step-title">Dein Angebot anfordern</div>
+
+    <div class="selected-tarif-bar" id="selectedTarifBar"></div>
+
+    <div class="form-grid full" style="margin-bottom:12px">
+      <div class="form-field">
+        <label>Vorname</label>
+        <input type="text" id="fname" placeholder="Max" oninput="validateContact()">
+      </div>
+    </div>
+    <div class="form-grid full" style="margin-bottom:12px">
+      <div class="form-field">
+        <label>Nachname</label>
+        <input type="text" id="lname" placeholder="Mustermann" oninput="validateContact()">
+      </div>
+    </div>
+    <div class="form-grid full" style="margin-bottom:12px">
+      <div class="form-field">
+        <label>Telefonnummer</label>
+        <input type="tel" id="phone" placeholder="+49 170 123456" oninput="validateContact()">
+      </div>
+    </div>
+    <div class="form-grid full" style="margin-bottom:8px">
+      <div class="form-field">
+        <label>E-Mail-Adresse</label>
+        <input type="email" id="email" placeholder="max@beispiel.de" oninput="validateContact()">
+      </div>
+    </div>
+
+    <div class="consent-text">
+      Mit dem Absenden stimmst du zu, dass ein Berater der Abschiedsvorsorge dein persönliches Angebot für dich erstellt und dir zuschickt.
+    </div>
+
+    <button class="btn-primary" id="btnStep4" onclick="submitLead()" disabled>
+      Angebot anfordern →
+    </button>
+
+    <button class="btn-back" onclick="goBack(3)">← Zurück</button>
+  </div>
+
+  <!-- STEP 5: OTP -->
+  <div class="step" id="step5">
+    <div class="otp-info">
+      <div class="otp-icon">💬</div>
+      <h3>Kurz bestätigen</h3>
+      <p>Wir haben dir einen 6-stelligen Code per WhatsApp an</p>
+      <p class="otp-phone" id="otpPhone"></p>
+      <p>geschickt. Bitte gib ihn hier ein:</p>
+    </div>
+
+    <div class="otp-input-row">
+      <input class="otp-digit" type="number" maxlength="1" id="otp1" oninput="otpInput(this,1)" onkeydown="otpKey(this,1)">
+      <input class="otp-digit" type="number" maxlength="1" id="otp2" oninput="otpInput(this,2)" onkeydown="otpKey(this,2)">
+      <input class="otp-digit" type="number" maxlength="1" id="otp3" oninput="otpInput(this,3)" onkeydown="otpKey(this,3)">
+      <input class="otp-digit" type="number" maxlength="1" id="otp4" oninput="otpInput(this,4)" onkeydown="otpKey(this,4)">
+      <input class="otp-digit" type="number" maxlength="1" id="otp5" oninput="otpInput(this,5)" onkeydown="otpKey(this,5)">
+      <input class="otp-digit" type="number" maxlength="1" id="otp6" oninput="otpInput(this,6)" onkeydown="otpKey(this,6)">
+    </div>
+
+    <div class="otp-resend">Keinen Code erhalten? <button onclick="alert('Code wurde erneut gesendet.')">Erneut senden</button></div>
+
+    <button class="btn-primary" id="btnOTP" onclick="verifyOTP()" disabled>
+      Code bestätigen →
+    </button>
+
+    <button class="btn-back" onclick="goBack(4)">← Zurück</button>
+  </div>
+
+  <!-- STEP 6: Erfolg -->
+  <div class="step" id="step6">
+    <div class="success-wrap">
+      <div class="success-icon">✓</div>
+      <h3>Vielen Dank!</h3>
+      <p>Deine Anfrage ist eingegangen.</p>
+
+      <div class="success-steps">
+        <div class="success-step">
+          <div class="success-step-num">1</div>
+          <div>Du erhältst jetzt deine Bestätigung per WhatsApp oder Mail.</div>
+        </div>
+        <div class="success-step">
+          <div class="success-step-num">2</div>
+          <div>Dein persönliches Angebot wird für dich erstellt.</div>
+        </div>
+        <div class="success-step">
+          <div class="success-step-num">3</div>
+          <div>Ein Berater der Abschiedsvorsorge steht jederzeit für dich zur Verfügung.</div>
+        </div>
+      </div>
+
+      <p style="font-size:13px">Bei Fragen erreichst du uns unter<br><strong style="color:var(--navy)">02181-68717</strong></p>
+    </div>
+  </div>
+
+  <div class="trust-footer">
+    <div class="trust-item">🔒 SSL-verschlüsselt</div>
+    <div class="trust-item">✓ DSGVO-konform</div>
+    <div class="trust-item">Kostenlos & unverbindlich</div>
+  </div>
+
+</div>
+</div>
+
+<div style="text-align:center;padding:10px 16px 14px;font-size:10px;color:rgba(255,255,255,0.45);line-height:1.9;">
+<div>
+    <a href="#" style="color:rgba(255,255,255,0.45)">Impressum</a> ·
+    <a href="#" style="color:rgba(255,255,255,0.45)">Datenschutz</a>
+  </div>
+</div>
+
+<script>
+// ─── BEITRAGSTABELLE (intern, Stand 01.01.2025) ───
+const TARIFE = {"40":{"basis":12.68,"komfort":18.08,"premium":23.49},"41":{"basis":13.06,"komfort":18.65,"premium":24.24},"42":{"basis":13.45,"komfort":19.24,"premium":25.03},"43":{"basis":13.87,"komfort":19.87,"premium":25.87},"44":{"basis":14.31,"komfort":20.53,"premium":26.75},"45":{"basis":14.78,"komfort":21.23,"premium":27.69},"46":{"basis":15.27,"komfort":21.97,"premium":28.67},"47":{"basis":15.8,"komfort":22.76,"premium":29.72},"48":{"basis":16.34,"komfort":23.57,"premium":30.8},"49":{"basis":16.91,"komfort":24.42,"premium":31.94},"50":{"basis":17.5,"komfort":25.31,"premium":33.12},"51":{"basis":18.12,"komfort":26.25,"premium":34.37},"52":{"basis":18.78,"komfort":27.24,"premium":35.69},"53":{"basis":19.48,"komfort":28.29,"premium":37.09},"54":{"basis":20.23,"komfort":29.4,"premium":38.58},"55":{"basis":21.02,"komfort":30.59,"premium":40.17},"56":{"basis":21.86,"komfort":31.86,"premium":41.85},"57":{"basis":22.76,"komfort":33.2,"premium":43.64},"58":{"basis":23.71,"komfort":34.62,"premium":45.54},"59":{"basis":24.72,"komfort":36.14,"premium":47.55},"60":{"basis":25.79,"komfort":37.74,"premium":49.69},"61":{"basis":26.92,"komfort":39.43,"premium":51.95},"62":{"basis":28.11,"komfort":41.23,"premium":54.34},"63":{"basis":29.38,"komfort":43.13,"premium":56.87},"64":{"basis":30.73,"komfort":45.16,"premium":59.58},"65":{"basis":32.18,"komfort":47.33,"premium":62.48},"66":{"basis":33.74,"komfort":49.67,"premium":65.59},"67":{"basis":35.43,"komfort":52.2,"premium":68.97},"68":{"basis":37.28,"komfort":54.96,"premium":72.65},"69":{"basis":39.3,"komfort":58.0,"premium":76.7},"70":{"basis":41.53,"komfort":61.34,"premium":81.16},"71":{"basis":44.0,"komfort":65.05,"premium":86.1},"72":{"basis":46.77,"komfort":69.21,"premium":91.64},"73":{"basis":49.9,"komfort":73.89,"premium":97.88},"74":{"basis":53.47,"komfort":79.24,"premium":105.02},"75":{"basis":57.61,"komfort":85.46,"premium":113.3},"76":{"basis":62.5,"komfort":92.79,"premium":123.07},"77":{"basis":68.41,"komfort":101.65,"premium":134.88},"78":{"basis":75.76,"komfort":112.66,"premium":149.56},"79":{"basis":85.3,"komfort":126.95,"premium":168.61},"80":{"basis":98.45,"komfort":146.66,"premium":194.87}};
+
+// ─── STATE ───
+let state = {
+  anrede: null,
+  geburtsdatum: null,
+  alter: null,
+  selectedTarif: null,
+  selectedTarifName: null,
+  selectedVS: null,
+  selectedPrice: null,
+};
+
+// ─── SCHRITT 1: Geschlecht ───
+function dayInput(el) {
+  el.value = el.value.replace(/[^0-9]/g, '').slice(0, 2);
+  if (el.value.length === 2) document.getElementById('bmonth').focus();
+  validateDate();
+}
+function monthInput(el) {
+  el.value = el.value.replace(/[^0-9]/g, '').slice(0, 2);
+  if (el.value.length === 2) document.getElementById('byear').focus();
+  validateDate();
+}
+
+function selectGender(val) {
+  state.anrede = val;
+  document.getElementById('btn-herr').classList.toggle('selected', val === 'Herr');
+  document.getElementById('btn-frau').classList.toggle('selected', val === 'Frau');
+  validateDate();
+}
+
+function calcAge(day, month, year) {
+  const today = new Date();
+  const birth = new Date(year, month - 1, day);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+  return age;
+}
+
+function validateDate() {
+  const d = parseInt(document.getElementById('bday').value);
+  const m = parseInt(document.getElementById('bmonth').value);
+  const y = parseInt(document.getElementById('byear').value);
+  const hint = document.getElementById('ageHint');
+  const btn = document.getElementById('btnStep1');
+
+  if (!d || !m || !y || y.toString().length < 4) {
+    hint.textContent = 'Bitte vollständiges Geburtsdatum eingeben';
+    hint.className = 'age-hint';
+    btn.disabled = true;
+    return;
+  }
+  const age = calcAge(d, m, y);
+  if (age < 40 || age > 80) {
+    hint.textContent = `Alter ${age} Jahre — Versicherung ist für 40–80 Jahre verfügbar`;
+    hint.className = 'age-hint error';
+    btn.disabled = true;
+    return;
+  }
+  if (!state.anrede) {
+    hint.textContent = `Alter: ${age} Jahre — bitte noch Anrede wählen`;
+    hint.className = 'age-hint';
+    btn.disabled = true;
+    return;
+  }
+  state.alter = age;
+  state.geburtsdatum = `${String(d).padStart(2,'0')}.${String(m).padStart(2,'0')}.${y}`;
+  hint.textContent = `✓ Alter: ${age} Jahre — Tarife verfügbar`;
+  hint.className = 'age-hint valid';
+  btn.disabled = false;
+}
+
+// ─── LOADER ───
+function goToLoader() {
+  showStep(2);
+  const msgs = [
+    'Wir suchen die <strong>besten Tarife</strong> für dein Alter…',
+    'Berechnung mit <strong>aktuellen aktuellen Tarifen</strong>…',
+    'Fast fertig — <strong>deine Tarife sind gleich bereit</strong>…'
+  ];
+  let i = 0;
+  const lt = document.getElementById('loaderText');
+  const interval = setInterval(() => {
+    i++;
+    if (i < msgs.length) lt.innerHTML = msgs[i];
+  }, 800);
+  setTimeout(() => {
+    clearInterval(interval);
+    buildTarifCards();
+    showStep(3);
+  }, 2200);
+}
+
+// ─── TARIF KARTEN ───
+function buildTarifCards() {
+  const t = TARIFE[state.alter];
+  document.getElementById('namePreview').textContent = `dich — geboren am ${state.geburtsdatum}`;
+
+  const tarife = [
+    {
+      id: 'basis',
+      name: 'Basis',
+      vs: '5.000 €',
+      price: t.basis,
+      features: ['Bestattungskosten', 'Bestattung'],
+      recommended: false,
+    },
+    {
+      id: 'komfort',
+      name: 'Komfort',
+      vs: '7.500 €',
+      price: t.komfort,
+      features: ['Bestattungskosten', 'Trauerfeier', 'Grabstein'],
+      recommended: true,
+    },
+    {
+      id: 'premium',
+      name: 'Premium',
+      vs: '10.000 €',
+      price: t.premium,
+      features: ['Bestattungskosten', 'Trauerfeier', 'Grabstein', 'Dauergrabpflege', 'Alle Extras'],
+      recommended: false,
+    }
+  ];
+
+  const grid = document.getElementById('tarifGrid');
+  grid.innerHTML = '';
+  tarife.forEach(tarif => {
+    const featureHTML = tarif.features.map(f =>
+      `<span class="tarif-feature">✓ ${f}</span>`
+    ).join('');
+
+    grid.innerHTML += `
+      <div class="tarif-card ${tarif.recommended ? 'recommended' : ''}" id="tarif-${tarif.id}">
+        ${tarif.recommended ? '<div class="recommended-badge">⭐ Meist gewählt</div>' : ''}
+        <div class="tarif-name">${tarif.name}</div>
+        <div class="tarif-mid-row">
+          <div class="tarif-vs-block">
+            <div class="tarif-vs-amount">${tarif.vs}</div>
+            <div class="tarif-vs-label">Versicherungssumme</div>
+          </div>
+          <div class="tarif-price-block">
+            <div class="tarif-price-row">
+              <span class="tarif-ab">ab</span>
+              <span class="tarif-price">${tarif.price.toFixed(2).replace('.',',')} €</span>
+            </div>
+            <span class="tarif-price-unit">/Monat</span>
+          </div>
+        </div>
+        <div class="tarif-features">${featureHTML}</div>
+        <button class="tarif-select-btn" onclick="selectTarif('${tarif.id}','${tarif.name}','${tarif.vs}',${tarif.price})">
+          Wählen →
+        </button>
+      </div>
+    `;
+  });
+}
+
+function selectTarif(id, name, vs, price) {
+  state.selectedTarif = id;
+  state.selectedTarifName = name;
+  state.selectedVS = vs;
+  state.selectedPrice = price;
+
+  document.getElementById('selectedTarifBar').innerHTML = `
+    <div>
+      <div class="label">Gewählter Tarif</div>
+      <div class="value">${name} · ${vs}</div>
+    </div>
+    <div class="price">${price.toFixed(2).replace('.',',')} €/Mo</div>
+  `;
+
+  showStep(4);
+}
+
+// ─── KONTAKT ───
+function validateContact() {
+  const fn = document.getElementById('fname').value.trim();
+  const ln = document.getElementById('lname').value.trim();
+  const ph = document.getElementById('phone').value.trim();
+  const em = document.getElementById('email').value.trim();
+  const btn = document.getElementById('btnStep4');
+  btn.disabled = !(fn && ln && ph.length >= 10 && em.includes('@'));
+}
+
+function goToOTP() {
+  const phone = document.getElementById('phone').value.trim();
+  document.getElementById('otpPhone').textContent = phone;
+  showStep(5);
+  document.getElementById('otp1').focus();
+}
+
+// ─── OTP ───
+function otpInput(el, idx) {
+  const val = el.value.toString();
+  if (val.length > 1) el.value = val.slice(-1);
+  if (el.value && idx < 6) document.getElementById('otp' + (idx+1)).focus();
+  checkOTPComplete();
+}
+function otpKey(el, idx) {
+  if (event.key === 'Backspace' && !el.value && idx > 1) {
+    document.getElementById('otp' + (idx-1)).focus();
+  }
+}
+function checkOTPComplete() {
+  let full = true;
+  for (let i = 1; i <= 6; i++) {
+    if (!document.getElementById('otp'+i).value) { full = false; break; }
+  }
+  document.getElementById('btnOTP').disabled = !full;
+}
+
+function verifyOTP() {
+  // In Produktion: Make-Webhook aufrufen für echte OTP-Verifizierung
+  // Demo: direkt weiter
+  submitLead();
+}
+
+function submitLead() {
+  // Lead-Daten sammeln
+  const leadData = {
+    anrede: state.anrede,
+    vorname: document.getElementById('fname').value.trim(),
+    nachname: document.getElementById('lname').value.trim(),
+    geburtsdatum: state.geburtsdatum,
+    alter: state.alter,
+    telefon: document.getElementById('phone').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    tarif: state.selectedTarifName,
+    versicherungssumme: state.selectedVS,
+    monatsbeitrag: state.selectedPrice,
+    quelle: 'Abschiedsvorsorge Funnel',
+    timestamp: new Date().toISOString(),
+  };
+
+  console.log('Lead:', leadData);
+
+  // TODO: Webhook an Make.com senden
+  // fetch('https://hook.eu1.make.com/DEIN_WEBHOOK', {
+  //   method: 'POST',
+  //   headers: {'Content-Type': 'application/json'},
+  //   body: JSON.stringify(leadData)
+  // });
+
+  showStep(6);
+}
+
+// ─── STEP NAVIGATION ───
+function showStep(n) {
+  for (let i = 1; i <= 6; i++) {
+    const s = document.getElementById('step'+i);
+    s.classList.toggle('active', i === n);
+  }
+  document.querySelector('.card-hero').style.display = n === 1 ? 'block' : 'none';
+
+  const stepMap = {1:1, 2:2, 3:2, 4:3, 5:4, 6:4};
+  const cur = stepMap[n] || n;
+  for (let i = 1; i <= 4; i++) {
+    const dot = document.getElementById('dot'+i);
+    dot.className = 'step-dot' + (i < cur ? ' done' : i === cur ? ' active' : '');
+  }
+  const labels = {1:'Schritt 1 von 4', 2:'Berechne…', 3:'Schritt 2 von 4', 4:'Schritt 3 von 4', 5:'Schritt 4 von 4', 6:'Fertig!'};
+  document.getElementById('stepLabel').textContent = labels[n] || '';
+
+  document.querySelector('.main-card').scrollTop = 0;
+  localStorage.setItem('devStep', n);
+}
+
+function goBack(toStep) { showStep(toStep); }
+
+const savedStep = parseInt(localStorage.getItem('devStep'));
+if (savedStep && savedStep > 1) showStep(savedStep);
+</script>
+
+</body>
+</html>
